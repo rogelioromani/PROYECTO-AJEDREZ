@@ -1,0 +1,5 @@
+Observaciones a casos de uso y requerimientos funcionales
+---------------------------------------------------------
+- Los requerimientos están bien
+- Los casos de uso parecen pocos puedes ser mas detallista en eso
+SIGUE ADELANTE
