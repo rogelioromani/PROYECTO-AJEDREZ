@@ -1,5 +1,11 @@
 Observaciones a casos de uso y requerimientos funcionales
 ---------------------------------------------------------
-- Los requerimientos est�n bien
+- Los requerimientos están bien
 - Los casos de uso parecen pocos puedes ser mas detallista en eso
+SIGUE ADELANTE
+
+OBSERVACIONES SEGUNDO AVANCE
+-----------------------------------------------------
+- muy bien! hiciste merge a los pull-request que te hice con observaciones.
+- pero... despues de eso solo hiciste dos commits, en uno creaste el proyecto y en otro cambiaste un True por un False, los commits normalmente deberían ser mas frecuentes y regulares.
 SIGUE ADELANTE
