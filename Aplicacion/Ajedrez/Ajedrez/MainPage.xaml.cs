@@ -22,6 +22,11 @@ namespace Ajedrez
             //BuildLocalizedApplicationBar();
         }
 
+        private void Image_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
+        {
+            if()
+        }
+
         // Código de ejemplo para compilar una ApplicationBar traducida
         //private void BuildLocalizedApplicationBar()
         //{
