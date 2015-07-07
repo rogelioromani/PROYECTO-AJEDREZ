@@ -157,39 +157,45 @@
 			<Rectangle Grid.Row="7" Grid.Column="3" Fill="#FF10CFEE" />
 			<Rectangle Grid.Row="7" Grid.Column="5" Fill="#FF10CFEE" />
 			<Rectangle Grid.Row="7" Grid.Column="7" Fill="#FF10CFEE" />
-			<Image Margin="10,10,10,5" Grid.Row="6" Source="/Assets/Imagen/white_peon.png" Stretch="Fill"/>
-			<Image Margin="10,5,10,10" Grid.Row="6" Source="/Assets/Imagen/white_peon.png" Stretch="Fill" Grid.Column="1"/>
-			<Image Margin="10,5,10,10" Grid.Row="6" Source="/Assets/Imagen/white_peon.png" Stretch="Fill" Grid.Column="2"/>
-			<Image Margin="10,5,10,10" Grid.Row="6" Source="/Assets/Imagen/white_peon.png" Stretch="Fill" Grid.Column="3"/>
-			<Image Margin="10,5,10,10" Grid.Row="6" Source="/Assets/Imagen/white_peon.png" Stretch="Fill" Grid.Column="4"/>
-			<Image Margin="10,5,10,10" Grid.Row="6" Source="/Assets/Imagen/white_peon.png" Stretch="Fill" Grid.Column="5"/>
-			<Image Margin="10,5,10,10" Grid.Row="6" Source="/Assets/Imagen/white_peon.png" Stretch="Fill" Grid.Column="6"/>
-			<Image Margin="10,5,10,10" Grid.Row="6" Source="/Assets/Imagen/white_peon.png" Stretch="Fill" Grid.Column="7"/>
-			<Image Margin="5" Grid.Row="7" Source="/Assets/Imagen/white_rook.png" Stretch="Fill"/>
-			<Image Margin="5" Grid.Row="7" Source="/Assets/Imagen/white_rook.png" Stretch="Fill" Grid.Column="7"/>
-			<Image Grid.Column="3" Margin="5" Grid.Row="7" Source="/Assets/Imagen/white_rey.png" Stretch="Fill"/>
-			<Image Grid.Column="2" Margin="5" Grid.Row="7" Source="/Assets/Imagen/white_caballo.png" Stretch="Fill"/>
-			<Image Grid.Column="5" Margin="5" Grid.Row="7" Source="/Assets/Imagen/white_caballo.png" Stretch="Fill"/>
-			<Image Grid.Column="1" Margin="5" Grid.Row="7" Source="/Assets/Imagen/white_bishop.png" Stretch="Fill"/>
-			<Image Grid.Column="6" Margin="5" Grid.Row="7" Source="/Assets/Imagen/white_bishop.png" Stretch="Fill"/>
-			<Image Margin="5" Grid.Row="1" Source="/Assets/Imagen/black_peon.png" Stretch="Fill"/>
-			<Image Margin="5" Grid.Row="1" Source="/Assets/Imagen/black_peon.png" Stretch="Fill" Grid.Column="1"/>
-			<Image Margin="5" Grid.Row="1" Source="/Assets/Imagen/black_peon.png" Stretch="Fill" Grid.Column="2"/>
-			<Image Margin="5" Grid.Row="1" Source="/Assets/Imagen/black_peon.png" Stretch="Fill" Grid.Column="3"/>
-			<Image Margin="5" Grid.Row="1" Source="/Assets/Imagen/black_peon.png" Stretch="Fill" Grid.Column="4"/>
-			<Image Margin="5" Grid.Row="1" Source="/Assets/Imagen/black_peon.png" Stretch="Fill" Grid.Column="5"/>
-			<Image Margin="5" Grid.Row="1" Source="/Assets/Imagen/black_peon.png" Stretch="Fill" Grid.Column="6"/>
-			<Image Margin="5" Grid.Row="1" Source="/Assets/Imagen/black_peon.png" Stretch="Fill" Grid.Column="7"/>
-			<Image Margin="5" Source="/Assets/Imagen/black_rook.png" Stretch="Fill"/>
-			<Image Grid.Column="1" Margin="5" Source="/Assets/Imagen/black_caballo.png" Stretch="Fill"/>
-			<Image Grid.Column="6" Margin="5" Source="/Assets/Imagen/black_caballo.png" Stretch="Fill"/>
-			<Image Grid.Column="2" Margin="5" Source="/Assets/Imagen/black_bishop.png" Stretch="Fill"/>
-			<Image Grid.Column="5" Margin="5" Source="/Assets/Imagen/black_bishop.png" Stretch="Fill"/>
-			<Image Grid.Column="3" Margin="5" Source="/Assets/Imagen/black_rey.png" Stretch="Fill"/>
-			<Image Grid.Column="4" Margin="5" Source="/Assets/Imagen/black_reina.png" Stretch="Fill"/>
+
+
+            <!--Piezas Negras-->
+            <Image x:Name="Torre1" Margin="5" Source="/Assets/Imagen/black_rook.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Image x:Name="Caballo1" Grid.Column="1" Margin="5" Source="/Assets/Imagen/black_caballo.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Image x:Name="Alfil" Grid.Column="2" Margin="5" Source="/Assets/Imagen/black_bishop.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Image x:Name="Rey" Grid.Column="3" Margin="5" Source="/Assets/Imagen/black_rey.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Image x:Name="Reyna" Grid.Column="4" Margin="5" Source="/Assets/Imagen/black_reina.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Image x:Name="Alfil1" Grid.Column="5" Margin="5" Source="/Assets/Imagen/black_bishop.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Image x:Name="Caballo2" Grid.Column="6" Margin="5" Source="/Assets/Imagen/black_caballo.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Image x:Name="Torre2" Grid.Column="7" Margin="5" Source="/Assets/Imagen/black_rook.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Image x:Name="Peon" Margin="5" Grid.Row="1" Source="/Assets/Imagen/black_peon.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Image x:Name="Peon1" Margin="5" Grid.Row="1" Source="/Assets/Imagen/black_peon.png" Stretch="Fill" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Image x:Name="Peon2" Margin="5" Grid.Row="1" Source="/Assets/Imagen/black_peon.png" Stretch="Fill" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Image x:Name="Peon3" Margin="5" Grid.Row="1" Source="/Assets/Imagen/black_peon.png" Stretch="Fill" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Image x:Name="Peon4" Margin="5" Grid.Row="1" Source="/Assets/Imagen/black_peon.png" Stretch="Fill" Grid.Column="4" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Image x:Name="Peon5" Margin="5" Grid.Row="1" Source="/Assets/Imagen/black_peon.png" Stretch="Fill" Grid.Column="5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Image x:Name="Peon6" Margin="5" Grid.Row="1" Source="/Assets/Imagen/black_peon.png" Stretch="Fill" Grid.Column="6" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Image x:Name="Peon7" Margin="5" Grid.Row="1" Source="/Assets/Imagen/black_peon.png" Stretch="Fill" Grid.Column="7" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+            <!--Piezas Blancas-->
+            <Image x:Name="Peon8" Margin="10,10,10,5" Grid.Row="6" Source="/Assets/Imagen/white_peon.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+			<Image x:Name="Peon9" Margin="10,5,10,10" Grid.Row="6" Source="/Assets/Imagen/white_peon.png" Stretch="Fill" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+			<Image x:Name="Peon10" Margin="10,5,10,10" Grid.Row="6" Source="/Assets/Imagen/white_peon.png" Stretch="Fill" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+			<Image x:Name="Peon11" Margin="10,5,10,10" Grid.Row="6" Source="/Assets/Imagen/white_peon.png" Stretch="Fill" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+			<Image x:Name="Peon12" Margin="10,5,10,10" Grid.Row="6" Source="/Assets/Imagen/white_peon.png" Stretch="Fill" Grid.Column="4" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+			<Image x:Name="Peon13" Margin="10,5,10,10" Grid.Row="6" Source="/Assets/Imagen/white_peon.png" Stretch="Fill" Grid.Column="5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+			<Image x:Name="Peon14" Margin="10,5,10,10" Grid.Row="6" Source="/Assets/Imagen/white_peon.png" Stretch="Fill" Grid.Column="6" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+			<Image x:Name="Peon15" Margin="10,5,10,10" Grid.Row="6" Source="/Assets/Imagen/white_peon.png" Stretch="Fill" Grid.Column="7" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+			<Image x:Name="Torre" Margin="5" Grid.Row="7" Source="/Assets/Imagen/white_rook.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Image x:Name="Alfil2" Grid.Column="1" Margin="5" Grid.Row="7" Source="/Assets/Imagen/white_bishop.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Image x:Name="Caballo" Grid.Column="2" Margin="5" Grid.Row="7" Source="/Assets/Imagen/white_caballo.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Image x:Name="Rey1" Grid.Column="3" Margin="5" Grid.Row="7" Source="/Assets/Imagen/white_rey.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Image x:Name="Reyna1" Grid.Column="4" Margin="5" Grid.Row="7" Source="/Assets/Imagen/white_reina.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Image x:Name="Caballo3" Grid.Column="5" Margin="5" Grid.Row="7" Source="/Assets/Imagen/white_caballo.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Image x:Name="Alfil3" Grid.Column="6" Margin="5" Grid.Row="7" Source="/Assets/Imagen/white_bishop.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Image x:Name="Torre3" Margin="5" Grid.Row="7" Source="/Assets/Imagen/white_rook.png" Stretch="Fill" Grid.Column="7" VerticalAlignment="Center"/>
+        		
 		</Grid>
-		<Image Margin="248,479,194,95" Grid.Row="1" Source="/Assets/Imagen/white_reina.png" Stretch="Fill"/>
-		<Image Margin="409,90,26,472" Grid.Row="1" Source="/Assets/Imagen/black_rook.png" Stretch="Fill"/>
 
 	</Grid>
 
