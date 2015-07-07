@@ -126,7 +126,18 @@
     <Content Include="Assets\ApplicationIcon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Assets\Imagen\Peon.png" />
+    <Content Include="Assets\Imagen\black_bishop.png" />
+    <Content Include="Assets\Imagen\black_caballo.png" />
+    <Content Include="Assets\Imagen\black_peon.png" />
+    <Content Include="Assets\Imagen\black_reina.png" />
+    <Content Include="Assets\Imagen\black_rey.png" />
+    <Content Include="Assets\Imagen\black_rook.png" />
+    <Content Include="Assets\Imagen\white_bishop.png" />
+    <Content Include="Assets\Imagen\white_caballo.png" />
+    <Content Include="Assets\Imagen\white_peon.png" />
+    <Content Include="Assets\Imagen\white_reina.png" />
+    <Content Include="Assets\Imagen\white_rey.png" />
+    <Content Include="Assets\Imagen\white_rook.png" />
     <Content Include="Assets\Tiles\FlipCycleTileLarge.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

@@ -79,20 +79,19 @@
 			</Grid.RowDefinitions>
 			<!-- agregando los cuadros(objeto rectangulo) en el tablero-->
 			<Rectangle Grid.Row="0" Grid.Column="0" Fill="#FF10CFEE" />
-			<Image Margin="10,0,5,0" Source="/Assets/Imagen/Peon.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" MouseEnter="Image_MouseEnter"/>
 			<Rectangle Grid.Row="0" Grid.Column="2" Fill="#FF10CFEE" />
 			<Rectangle Grid.Row="0" Grid.Column="4" Fill="#FF10CFEE" />
 			<Rectangle Grid.Row="0" Grid.Column="6" Fill="#FF10CFEE" />
 
-			<Rectangle Grid.Row="0" Grid.Column="1" Fill="White" />
-			<Rectangle Grid.Row="0" Grid.Column="3" Fill="White" />
-			<Rectangle Grid.Row="0" Grid.Column="5" Fill="White" />
-			<Rectangle Grid.Row="0" Grid.Column="7" Fill="White" />
+			<Rectangle Grid.Row="0" Grid.Column="1" Fill="#FF7AF78B" />
+			<Rectangle Grid.Row="0" Grid.Column="3" Fill="#FF7AF78B" />
+			<Rectangle Grid.Row="0" Grid.Column="5" Fill="#FF7AF78B" />
+			<Rectangle Grid.Row="0" Grid.Column="7" Fill="#FF7AF78B" />
 
-			<Rectangle Grid.Row="1" Grid.Column="0" Fill="White" />
-			<Rectangle Grid.Row="1" Grid.Column="2" Fill="White" />
-			<Rectangle Grid.Row="1" Grid.Column="4" Fill="White" />
-			<Rectangle Grid.Row="1" Grid.Column="6" Fill="White" />
+			<Rectangle Grid.Row="1" Grid.Column="0" Fill="#FF7AF78B" />
+			<Rectangle Grid.Row="1" Grid.Column="2" Fill="#FF7AF78B" />
+			<Rectangle Grid.Row="1" Grid.Column="4" Fill="#FF7AF78B" />
+			<Rectangle Grid.Row="1" Grid.Column="6" Fill="#FF7AF78B" />
 
 			<Rectangle Grid.Row="1" Grid.Column="1" Fill="#FF10CFEE" />
 			<Rectangle Grid.Row="1" Grid.Column="3" Fill="#FF10CFEE" />
@@ -104,15 +103,15 @@
 			<Rectangle Grid.Row="2" Grid.Column="4" Fill="#FF10CFEE" />
 			<Rectangle Grid.Row="2" Grid.Column="6" Fill="#FF10CFEE" />
 
-			<Rectangle Grid.Row="2" Grid.Column="1" Fill="White" />
-			<Rectangle Grid.Row="2" Grid.Column="3" Fill="White" />
-			<Rectangle Grid.Row="2" Grid.Column="5" Fill="White" />
-			<Rectangle Grid.Row="2" Grid.Column="7" Fill="White" />
+			<Rectangle Grid.Row="2" Grid.Column="1" Fill="#FF7AF78B" />
+			<Rectangle Grid.Row="2" Grid.Column="3" Fill="#FF7AF78B" />
+			<Rectangle Grid.Row="2" Grid.Column="5" Fill="#FF7AF78B" />
+			<Rectangle Grid.Row="2" Grid.Column="7" Fill="#FF7AF78B" />
 
-			<Rectangle Grid.Row="3" Grid.Column="0" Fill="White" />
-			<Rectangle Grid.Row="3" Grid.Column="2" Fill="White" />
-			<Rectangle Grid.Row="3" Grid.Column="4" Fill="White" />
-			<Rectangle Grid.Row="3" Grid.Column="6" Fill="White" />
+			<Rectangle Grid.Row="3" Grid.Column="0" Fill="#FF7AF78B" />
+			<Rectangle Grid.Row="3" Grid.Column="2" Fill="#FF7AF78B" />
+			<Rectangle Grid.Row="3" Grid.Column="4" Fill="#FF7AF78B" />
+			<Rectangle Grid.Row="3" Grid.Column="6" Fill="#FF7AF78B" />
 
 			<Rectangle Grid.Row="3" Grid.Column="1" Fill="#FF10CFEE" />
 			<Rectangle Grid.Row="3" Grid.Column="3" Fill="#FF10CFEE" />
@@ -124,15 +123,15 @@
 			<Rectangle Grid.Row="4" Grid.Column="4" Fill="#FF10CFEE" />
 			<Rectangle Grid.Row="4" Grid.Column="6" Fill="#FF10CFEE" />
 
-			<Rectangle Grid.Row="4" Grid.Column="1" Fill="White" />
-			<Rectangle Grid.Row="4" Grid.Column="3" Fill="White" />
-			<Rectangle Grid.Row="4" Grid.Column="5" Fill="White" />
-			<Rectangle Grid.Row="4" Grid.Column="7" Fill="White" />
+			<Rectangle Grid.Row="4" Grid.Column="1" Fill="#FF7AF78B" />
+			<Rectangle Grid.Row="4" Grid.Column="3" Fill="#FF7AF78B" />
+			<Rectangle Grid.Row="4" Grid.Column="5" Fill="#FF7AF78B" />
+			<Rectangle Grid.Row="4" Grid.Column="7" Fill="#FF7AF78B" />
 
-			<Rectangle Grid.Row="5" Grid.Column="0" Fill="White" />
-			<Rectangle Grid.Row="5" Grid.Column="2" Fill="White" />
-			<Rectangle Grid.Row="5" Grid.Column="4" Fill="White" />
-			<Rectangle Grid.Row="5" Grid.Column="6" Fill="White" />
+			<Rectangle Grid.Row="5" Grid.Column="0" Fill="#FF7AF78B" />
+			<Rectangle Grid.Row="5" Grid.Column="2" Fill="#FF7AF78B" />
+			<Rectangle Grid.Row="5" Grid.Column="4" Fill="#FF7AF78B" />
+			<Rectangle Grid.Row="5" Grid.Column="6" Fill="#FF7AF78B" />
 
 			<Rectangle Grid.Row="5" Grid.Column="1" Fill="#FF10CFEE" />
 			<Rectangle Grid.Row="5" Grid.Column="3" Fill="#FF10CFEE" />
@@ -144,21 +143,53 @@
 			<Rectangle Grid.Row="6" Grid.Column="4" Fill="#FF10CFEE" />
 			<Rectangle Grid.Row="6" Grid.Column="6" Fill="#FF10CFEE" />
 
-			<Rectangle Grid.Row="6" Grid.Column="1" Fill="White" />
-			<Rectangle Grid.Row="6" Grid.Column="3" Fill="White" />
-			<Rectangle Grid.Row="6" Grid.Column="5" Fill="White" />
-			<Rectangle Grid.Row="6" Grid.Column="7" Fill="White" />
+			<Rectangle Grid.Row="6" Grid.Column="1" Fill="#FF7AF78B" />
+			<Rectangle Grid.Row="6" Grid.Column="3" Fill="#FF7AF78B" />
+			<Rectangle Grid.Row="6" Grid.Column="5" Fill="#FF7AF78B" />
+			<Rectangle Grid.Row="6" Grid.Column="7" Fill="#FF7AF78B" />
 
-			<Rectangle Grid.Row="7" Grid.Column="0" Fill="White" />
-			<Rectangle Grid.Row="7" Grid.Column="2" Fill="White" />
-			<Rectangle Grid.Row="7" Grid.Column="4" Fill="White" />
-			<Rectangle Grid.Row="7" Grid.Column="6" Fill="White" />
+			<Rectangle Grid.Row="7" Grid.Column="0" Fill="#FF7AF78B" />
+            <Rectangle Grid.Row="7" Grid.Column="2" Fill="#FF7AF78B" />
+			<Rectangle Grid.Row="7" Grid.Column="4" Fill="#FF7AF78B" />
+			<Rectangle Grid.Row="7" Grid.Column="6" Fill="#FF7AF78B" />
 
 			<Rectangle Grid.Row="7" Grid.Column="1" Fill="#FF10CFEE" />
 			<Rectangle Grid.Row="7" Grid.Column="3" Fill="#FF10CFEE" />
 			<Rectangle Grid.Row="7" Grid.Column="5" Fill="#FF10CFEE" />
 			<Rectangle Grid.Row="7" Grid.Column="7" Fill="#FF10CFEE" />
+			<Image Margin="10,10,10,5" Grid.Row="6" Source="/Assets/Imagen/white_peon.png" Stretch="Fill"/>
+			<Image Margin="10,5,10,10" Grid.Row="6" Source="/Assets/Imagen/white_peon.png" Stretch="Fill" Grid.Column="1"/>
+			<Image Margin="10,5,10,10" Grid.Row="6" Source="/Assets/Imagen/white_peon.png" Stretch="Fill" Grid.Column="2"/>
+			<Image Margin="10,5,10,10" Grid.Row="6" Source="/Assets/Imagen/white_peon.png" Stretch="Fill" Grid.Column="3"/>
+			<Image Margin="10,5,10,10" Grid.Row="6" Source="/Assets/Imagen/white_peon.png" Stretch="Fill" Grid.Column="4"/>
+			<Image Margin="10,5,10,10" Grid.Row="6" Source="/Assets/Imagen/white_peon.png" Stretch="Fill" Grid.Column="5"/>
+			<Image Margin="10,5,10,10" Grid.Row="6" Source="/Assets/Imagen/white_peon.png" Stretch="Fill" Grid.Column="6"/>
+			<Image Margin="10,5,10,10" Grid.Row="6" Source="/Assets/Imagen/white_peon.png" Stretch="Fill" Grid.Column="7"/>
+			<Image Margin="5" Grid.Row="7" Source="/Assets/Imagen/white_rook.png" Stretch="Fill"/>
+			<Image Margin="5" Grid.Row="7" Source="/Assets/Imagen/white_rook.png" Stretch="Fill" Grid.Column="7"/>
+			<Image Grid.Column="3" Margin="5" Grid.Row="7" Source="/Assets/Imagen/white_rey.png" Stretch="Fill"/>
+			<Image Grid.Column="2" Margin="5" Grid.Row="7" Source="/Assets/Imagen/white_caballo.png" Stretch="Fill"/>
+			<Image Grid.Column="5" Margin="5" Grid.Row="7" Source="/Assets/Imagen/white_caballo.png" Stretch="Fill"/>
+			<Image Grid.Column="1" Margin="5" Grid.Row="7" Source="/Assets/Imagen/white_bishop.png" Stretch="Fill"/>
+			<Image Grid.Column="6" Margin="5" Grid.Row="7" Source="/Assets/Imagen/white_bishop.png" Stretch="Fill"/>
+			<Image Margin="5" Grid.Row="1" Source="/Assets/Imagen/black_peon.png" Stretch="Fill"/>
+			<Image Margin="5" Grid.Row="1" Source="/Assets/Imagen/black_peon.png" Stretch="Fill" Grid.Column="1"/>
+			<Image Margin="5" Grid.Row="1" Source="/Assets/Imagen/black_peon.png" Stretch="Fill" Grid.Column="2"/>
+			<Image Margin="5" Grid.Row="1" Source="/Assets/Imagen/black_peon.png" Stretch="Fill" Grid.Column="3"/>
+			<Image Margin="5" Grid.Row="1" Source="/Assets/Imagen/black_peon.png" Stretch="Fill" Grid.Column="4"/>
+			<Image Margin="5" Grid.Row="1" Source="/Assets/Imagen/black_peon.png" Stretch="Fill" Grid.Column="5"/>
+			<Image Margin="5" Grid.Row="1" Source="/Assets/Imagen/black_peon.png" Stretch="Fill" Grid.Column="6"/>
+			<Image Margin="5" Grid.Row="1" Source="/Assets/Imagen/black_peon.png" Stretch="Fill" Grid.Column="7"/>
+			<Image Margin="5" Source="/Assets/Imagen/black_rook.png" Stretch="Fill"/>
+			<Image Grid.Column="1" Margin="5" Source="/Assets/Imagen/black_caballo.png" Stretch="Fill"/>
+			<Image Grid.Column="6" Margin="5" Source="/Assets/Imagen/black_caballo.png" Stretch="Fill"/>
+			<Image Grid.Column="2" Margin="5" Source="/Assets/Imagen/black_bishop.png" Stretch="Fill"/>
+			<Image Grid.Column="5" Margin="5" Source="/Assets/Imagen/black_bishop.png" Stretch="Fill"/>
+			<Image Grid.Column="3" Margin="5" Source="/Assets/Imagen/black_rey.png" Stretch="Fill"/>
+			<Image Grid.Column="4" Margin="5" Source="/Assets/Imagen/black_reina.png" Stretch="Fill"/>
 		</Grid>
+		<Image Margin="248,479,194,95" Grid.Row="1" Source="/Assets/Imagen/white_reina.png" Stretch="Fill"/>
+		<Image Margin="409,90,26,472" Grid.Row="1" Source="/Assets/Imagen/black_rook.png" Stretch="Fill"/>
 
 	</Grid>
 
