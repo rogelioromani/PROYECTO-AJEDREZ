@@ -10,7 +10,7 @@ namespace Ajedrez.Ajedrez
     {
         public final HashMap<Pieza, Movimiento> movimientos= new HashMap<>();
         public ArrayList<String> listado_movimientos = new ArrayList<>();
-    }
+    
 
     public Movimientos()
     {
@@ -26,5 +26,5 @@ namespace Ajedrez.Ajedrez
     {
         listado_movimientos.add(pieza.tipoPieza()+" "+movimiento);
     }
-     
+  }
 }
