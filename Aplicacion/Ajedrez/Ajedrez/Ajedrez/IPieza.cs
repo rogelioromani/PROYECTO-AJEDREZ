@@ -10,6 +10,6 @@ namespace Ajedrez.Ajedrez
     {
         Movimientos getMovimientosPosibles();
         Boolean esMovimientoPosible(Posicion NuevoDestino);
-        void actualizarPosicion(Posicion, nuevaPosicion);
+        void actualizarPosicion(Posicion nuevaPosicion);
     }
 }

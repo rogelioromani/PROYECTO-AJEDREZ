@@ -91,6 +91,19 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Ajedrez\Color.cs" />
+    <Compile Include="Ajedrez\EstadoCasilla.cs" />
+    <Compile Include="Ajedrez\IJugador.cs" />
+    <Compile Include="Ajedrez\IPartidaAjedrez.cs" />
+    <Compile Include="Ajedrez\IPieza.cs" />
+    <Compile Include="Ajedrez\ITablero.cs" />
+    <Compile Include="Ajedrez\Jugador.cs" />
+    <Compile Include="Ajedrez\Maquina.cs" />
+    <Compile Include="Ajedrez\Movimiento.cs" />
+    <Compile Include="Ajedrez\Movimientos.cs" />
+    <Compile Include="Ajedrez\Pieza.cs" />
+    <Compile Include="Ajedrez\Posicion.cs" />
+    <Compile Include="Ajedrez\Tablero.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
@@ -98,14 +111,18 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pieza.cs" />
+    <Compile Include="Piezas\Alfil.cs" />
+    <Compile Include="Piezas\Caballo.cs" />
+    <Compile Include="Piezas\Peon.cs" />
+    <Compile Include="Piezas\Rey.cs" />
+    <Compile Include="Piezas\Reyna.cs" />
+    <Compile Include="Piezas\Torre.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\AppResources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>AppResources.resx</DependentUpon>
     </Compile>
-    <Compile Include="VistaTablero.cs" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -166,6 +183,7 @@
     <Reference Include="Microsoft.Expression.Interactions" />
     <Reference Include="System.Windows.Interactivity" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

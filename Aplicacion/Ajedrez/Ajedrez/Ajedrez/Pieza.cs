@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Ajedrez.Ajedrez
 {
      
-     public abstract class Pieza: Ajedrez.IPieza
+     public abstract class Pieza:
     {
         public Posicion posicion;
         public Color color;
