@@ -35,7 +35,7 @@ namespace Ajedrez.Piezas
     {
         this.getMovimientosPosibles();
         System.Windows.MessageBox.Show("MOVIMIENTOS POSIBLES");
-        for (Posicion palabra : resultado) {
+        for (Posicion palabra ; resultado) {
             System.Windows.MessageBox.Show(palabra+" ");
         }
         System.Windows.MessageBox.Show("");
@@ -49,9 +49,9 @@ namespace Ajedrez.Piezas
         //Esquina superior derecha
         int f_aux = posicion.getFila();
         int c_aux = posicion.getColumna(); //Obtenemos la posición dentro del array
-        System.Windows.MessageBox.Show("Columnas " + columnas.length);
-        System.Windows.MessageBox.Show("Filas " + columnas.length);
-        while ((f_aux > 0) && (c_aux < columnas.length-1)) {
+        System.Windows.MessageBox.Show("Columnas " + columnas.Length);
+        System.Windows.MessageBox.Show("Filas " + columnas.Length);
+        while ((f_aux > 0) && (c_aux < columnas.Length-1)) {
             f_aux--;
             c_aux++;
             resultado.add(new Posicion(f_aux, c_aux));
@@ -61,14 +61,14 @@ namespace Ajedrez.Piezas
         f_aux = posicion.getFila();
         c_aux = posicion.getColumna();
         System.Windows.MessageBox.Show("mala: " + "f_aux= "+ f_aux + "c_aux= " + c_aux);
-        while ((f_aux < filas.length-2) && (c_aux < columnas.length-1)) {
+        while ((f_aux < filas.Length-2) && (c_aux < columnas.Length-1)) {
             f_aux++;
             c_aux++;
             resultado.add(new Posicion(f_aux, c_aux));
         }
         f_aux = posicion.getFila();
         c_aux = posicion.getColumna(); //Obtenemos la posición dentro del array
-        while((f_aux < filas.length-2) && (c_aux > 0)){
+        while((f_aux < filas.Length-2) && (c_aux > 0)){
             //Esquina superior izquierda
             f_aux++;
             c_aux--;
@@ -93,7 +93,7 @@ namespace Ajedrez.Piezas
         
         f_aux = posicion.getFila();
         c_aux = posicion.getColumna(); //Obtenemos la posición dentro del array
-        while(f_aux < filas.length-2){
+        while(f_aux < filas.Length-2){
             //Hacia delante
             f_aux++;
             resultado.add(new Posicion(f_aux, c_aux));
@@ -108,7 +108,7 @@ namespace Ajedrez.Piezas
 
         f_aux = posicion.getFila();
         c_aux = posicion.getColumna(); //Obtenemos la posición dentro del array
-        while(c_aux < columnas.length -2){
+        while(c_aux < columnas.Length -2){
             // Hacia derecha
             c_aux++;
             resultado.add(new Posicion(f_aux, c_aux));
@@ -116,7 +116,7 @@ namespace Ajedrez.Piezas
         return mov;
     }
 
-    public boolean esMovimientoPosible(Posicion nuevoDestino) {
+    public Boolean esMovimientoPosible(Posicion nuevoDestino) {
         //Aquí la idea es en primer lugar mirar en el array que nos ha devuelto 
         //el método anterior si nuevoDestino está dentro de el y por tanto
         //sería candidato a moverse si no hay otra ficha o alguna por medio

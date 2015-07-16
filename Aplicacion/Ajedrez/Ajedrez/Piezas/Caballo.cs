@@ -8,7 +8,7 @@ using Ajedrez.Ajedrez;
 
 namespace Ajedrez.Piezas
 {
-    public class Caballo
+    public class Caballo:Pieza
     {
         Movimientos mov = new Movimientos();
     //Posicion pos;
@@ -35,7 +35,7 @@ namespace Ajedrez.Piezas
     {
         this.getMovimientosPosibles();
         System.Windows.MessageBox.Show("MOVIMIENTOS POSIBLES");
-        for (Posicion palabra : resultado) {
+        for (Posicion palabra ; resultado) {
              System.Windows.MessageBox.Show(palabra+" ");
         }
          System.Windows.MessageBox.Show("");
@@ -47,7 +47,7 @@ namespace Ajedrez.Piezas
         int f_aux = posicion.getFila();
         int c_aux = posicion.getColumna(); //Obtenemos la posición dentro del array
         // Primera posicion posible
-        if ((f_aux - 1 > 0)&&(c_aux + 2 < columnas.length-1))
+        if ((f_aux - 1 > 0)&&(c_aux + 2 < columnas.Length-1))
         {
             f_aux = f_aux - 1;
             c_aux = c_aux + 2;
@@ -57,7 +57,7 @@ namespace Ajedrez.Piezas
         f_aux = posicion.getFila();
         c_aux = posicion.getColumna(); //Obtenemos la posición dentro del array
         // Segunda posiciones posibles
-        if ((f_aux + 1 < filas.length - 1)&&(c_aux + 2 < columnas.length-1))
+        if ((f_aux + 1 < filas.Length - 1)&&(c_aux + 2 < columnas.Length-1))
         {        
             f_aux = f_aux + 1;
             c_aux = c_aux + 2;
@@ -76,7 +76,7 @@ namespace Ajedrez.Piezas
         c_aux = posicion.getColumna(); //Obtenemos la posición dentro del array
         
         // Cuarta posicion posible
-        if ((f_aux + 1 < filas.length - 1)&&(c_aux - 2 > 0))
+        if ((f_aux + 1 < filas.Length - 1)&&(c_aux - 2 > 0))
         {        
             f_aux = f_aux + 1;
             c_aux = c_aux - 2;
@@ -86,7 +86,7 @@ namespace Ajedrez.Piezas
         c_aux = posicion.getColumna(); //Obtenemos la posición dentro del array
         
         // Quinta posicion posible
-        if ((f_aux + 2 < filas.length - 1)&&(c_aux + 1 < columnas.length-1))
+        if ((f_aux + 2 < filas.Length - 1)&&(c_aux + 1 < columnas.Length-1))
         {        
             f_aux = f_aux + 2;
             c_aux = c_aux + 1;
@@ -96,7 +96,7 @@ namespace Ajedrez.Piezas
         f_aux = posicion.getFila();
         c_aux = posicion.getColumna(); //Obtenemos la posición dentro del array
         // Sexta posiciones posibles
-        if ((f_aux + 2 < filas.length - 1)&&(c_aux - 1 > 0))
+        if ((f_aux + 2 < filas.Length - 1)&&(c_aux - 1 > 0))
         {        
             f_aux = f_aux + 2;
             c_aux = c_aux - 1;
@@ -107,7 +107,7 @@ namespace Ajedrez.Piezas
         c_aux = posicion.getColumna(); //Obtenemos la posición dentro del array
         
         // Septima posiciones posibles
-        if ((f_aux - 2 > 0)&&(c_aux + 1 < columnas.length-1))
+        if ((f_aux - 2 > 0)&&(c_aux + 1 < columnas.Length-1))
         {        
             f_aux = f_aux - 2;
             c_aux = c_aux + 1;
@@ -159,5 +159,5 @@ namespace Ajedrez.Piezas
     public String toString(){
         return "Caballo "+color.name();
     }
-    }
+ }
 }

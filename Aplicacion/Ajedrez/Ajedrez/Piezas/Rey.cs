@@ -29,7 +29,7 @@ namespace Ajedrez.Piezas
     {
         this.getMovimientosPosibles();
         System.Windows.MessageBox.Show("MOVIMIENTOS POSIBLES");
-        for (Posicion palabra : resultado) {
+        for (Posicion palabra ; resultado) {
            System.Windows.MessageBox.Show(palabra+" ");
         }
         System.Windows.MessageBox.Show("");
@@ -42,7 +42,7 @@ namespace Ajedrez.Piezas
         int f_aux = posicion.getFila();
         int c_aux = posicion.getColumna(); //Obtenemos la posición dentro del array
         
-        if((f_aux > 0) && (f_aux < filas.length-1) && (c_aux > 0) && (c_aux < columnas.length-1)){
+        if((f_aux > 0) && (f_aux < filas.Length-1) && (c_aux > 0) && (c_aux < columnas.Length-1)){
         //posicion media
             
             resultado.add(new Posicion(f_aux, c_aux+1));
@@ -60,20 +60,20 @@ namespace Ajedrez.Piezas
             resultado.add(new Posicion(f_aux+1, c_aux+1));
             resultado.add(new Posicion(f_aux+1, c_aux));
         }
-        else if((c_aux - 1 < 0) && (f_aux + 1 > filas.length)){
+        else if((c_aux - 1 < 0) && (f_aux + 1 > filas.Length)){
          //esquina inferior izquierda
             resultado.add(new Posicion(f_aux, c_aux+1));
             resultado.add(new Posicion(f_aux-1, c_aux+1));
             resultado.add(new Posicion(f_aux-1, c_aux));
         }
-        else if((c_aux +1 > columnas.length) && (f_aux +1 > filas.length))
+        else if((c_aux +1 > columnas.Length) && (f_aux +1 > filas.Length))
         {
             //esquina inferior derecha
             resultado.add(new Posicion(f_aux, c_aux-1));
             resultado.add(new Posicion(f_aux-1, c_aux-1));
             resultado.add(new Posicion(f_aux -1, c_aux));
         }
-        else if((c_aux +1 > columnas.length) && (f_aux -1 < 0)){
+        else if((c_aux +1 > columnas.Length) && (f_aux -1 < 0)){
             //esquina superior derecha
             resultado.add(new Posicion(f_aux+1, c_aux));
             resultado.add(new Posicion(f_aux, c_aux-1));
@@ -87,7 +87,7 @@ namespace Ajedrez.Piezas
             resultado.add(new Posicion(f_aux, c_aux+1));
             resultado.add(new Posicion(f_aux-1, c_aux+1));
         }
-        else if(c_aux + 1 > columnas.length -1){
+        else if(c_aux + 1 > columnas.Length -1){
             //Lateral derecho
             resultado.add(new Posicion(f_aux+1, c_aux));
             resultado.add(new Posicion(f_aux-1, c_aux));
@@ -95,7 +95,7 @@ namespace Ajedrez.Piezas
             resultado.add(new Posicion(f_aux, c_aux-1));
             resultado.add(new Posicion(f_aux-1, c_aux-1));
         }
-        else if(f_aux + 1 > filas.length -1){
+        else if(f_aux + 1 > filas.Length -1){
             //Inferior
             resultado.add(new Posicion(f_aux-1, c_aux));
             resultado.add(new Posicion(f_aux-1, c_aux+1));
@@ -140,7 +140,6 @@ namespace Ajedrez.Piezas
         return esposible;
 
     }
-
     public String tipoPieza(){
         return "Rey";
     }
@@ -148,5 +147,5 @@ namespace Ajedrez.Piezas
     public String toString(){
         return "Rey "+color.name();
     }
-    }
+  }
 }

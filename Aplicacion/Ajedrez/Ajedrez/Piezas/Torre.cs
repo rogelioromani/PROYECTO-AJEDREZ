@@ -32,7 +32,7 @@ namespace Ajedrez.Piezas
     {
         this.getMovimientosPosibles();
         System.Windows.MessageBox.Show("MOVIMIENTOS POSIBLES");
-        for (Posicion palabra : resultado) {
+        for (Posicion palabra ; resultado) {
             System.Windows.MessageBox.Show(palabra+" ");
         }
         System.Windows.MessageBox.Show("");
@@ -55,7 +55,7 @@ namespace Ajedrez.Piezas
         
         f_aux = posicion.getFila();
         c_aux = posicion.getColumna();
-        while(f_aux < filas.length-2){
+        while(f_aux < filas.Length-2){
             //Hacia delante
             f_aux++;
             resultado.add(new Posicion(f_aux, c_aux));
@@ -70,7 +70,7 @@ namespace Ajedrez.Piezas
 
         f_aux = posicion.getFila();
         c_aux = posicion.getColumna();
-        while(c_aux < columnas.length-2){
+        while(c_aux < columnas.Length-2){
             // Hacia derecha
             c_aux++;
             resultado.add(new Posicion(f_aux, c_aux));

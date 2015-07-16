@@ -7,7 +7,7 @@ using Ajedrez.Ajedrez;
 
 namespace Ajedrez
 {
-    public class Alfil
+    public class Alfil:Pieza
     {
     Movimientos mov = new Movimientos();
     //Posicion pos;
@@ -31,8 +31,8 @@ namespace Ajedrez
     {
         this.getMovimientosPosibles();
          System.Windows.MessageBox.Show("MOVIMIENTOS POSIBLES");
-        for (Posicion palabra : resultado) {
-             System.Windows.MessageBox.Show(palabra+" ");
+        for (Posicion palabra; resultado) {
+             System.Windows.MessageBox.Show(palabra + " ");
         }
          System.Windows.MessageBox.Show("");
         resultado.clear();
@@ -48,7 +48,7 @@ namespace Ajedrez
         int f_aux = posicion.getFila();
         int c_aux = posicion.getColumna(); //Obtenemos la posición dentro del array
         
-        while ((f_aux > 0) && (c_aux < columnas.length-1)) {
+        while ((f_aux > 0) && (c_aux < columnas.Length-1)) {
             f_aux--;
             c_aux++;
             resultado.add(new Posicion(f_aux, c_aux));
@@ -59,7 +59,7 @@ namespace Ajedrez
         f_aux = posicion.getFila();
         c_aux = posicion.getColumna();
         System.Windows.MessageBox.Show("mala: " + "f_aux= "+ f_aux + "c_aux= " + c_aux);
-        while ((f_aux < filas.length-1) && (c_aux < columnas.length-1)) {
+        while ((f_aux < filas.Length-1) && (c_aux < columnas.Length-1)) {
             f_aux++;
             c_aux++;
             
@@ -77,7 +77,7 @@ namespace Ajedrez
         f_aux = posicion.getFila();
         c_aux = posicion.getColumna();
         System.Windows.MessageBox.Show("joder: " + "f_aux= "+ f_aux + "c_aux= " + c_aux);
-        while ((f_aux < filas.length-1) && (c_aux > 0)) {
+        while ((f_aux < filas.Length-1) && (c_aux > 0)) {
             //Esquina inferior izquierda
             f_aux++;
             c_aux--;
@@ -123,5 +123,5 @@ namespace Ajedrez
         return "Alfil " + color.name();
     }
 
-    }
+  }
 }

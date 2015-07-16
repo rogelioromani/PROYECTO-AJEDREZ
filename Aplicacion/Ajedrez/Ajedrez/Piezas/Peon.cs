@@ -7,7 +7,7 @@ using Ajedrez.Ajedrez;
 
 namespace Ajedrez.Piezas
 {
-    public class Peon
+    public class Peon:Pieza
     {
         Movimientos mov = new Movimientos();
     //Posicion pos;
@@ -31,7 +31,7 @@ namespace Ajedrez.Piezas
     
     public void MostrarTodas()
     {
-        for (Posicion palabra : resultado) {
+        for (Posicion palabra ; resultado) {
             System.Windows.MessageBox.Show(palabra+" ");
         }
         System.Windows.MessageBox.Show("");
@@ -74,5 +74,5 @@ namespace Ajedrez.Piezas
     public Movimientos getMovimientosPosibles() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    }
+  }
 }
