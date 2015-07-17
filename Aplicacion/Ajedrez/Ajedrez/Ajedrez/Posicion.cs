@@ -11,35 +11,44 @@ namespace Ajedrez.Ajedrez
     {
         public int fila;
         public int columna;
-    }
 
-    public Posicion (int f, int c){
-        fila=f;
-        columna=c;
-    }
 
-    //Getters
-    public int getFila() {
-        return fila;
-    }
+        public Posicion(int f, int c)
+        {
+            fila = f;
+            columna = c;
+        }
 
-    public int getColumna() {
-        return columna;
-    }
+        //Getters
+        public int getFila()
+        {
+            return fila;
+        }
 
-    //Setters
-    public void setFila(int fila) {
-        this.fila = fila;
-    }
+        public int getColumna()
+        {
+            return columna;
+        }
 
-    public void setColumna(int columna) {
-        this.columna = columna;
-    }
+        //Setters
+        public void setFila(int fila)
+        {
+            this.fila = fila;
+        }
 
-    public String toString(){
-        char[] c = {'a','b','c','d','e','f','g','h'};
-        char[] f = {'8','7','6','5','4','3','2','1'};
-        String s = new StringBuilder().append(c[columna]).append(f[fila]).toString();
-        return s;
+        public void setColumna(int columna)
+        {
+            this.columna = columna;
+        }
+
+        public String toString()
+        {
+            char[] c = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h' };
+            char[] f = { '8', '7', '6', '5', '4', '3', '2', '1' };
+            String s = new StringBuilder().append(c[columna]).append(f[fila]).toString();
+            return s;
+        }
+
     }
 }
+
