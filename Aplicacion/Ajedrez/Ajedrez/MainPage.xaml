@@ -1,11 +1,12 @@
 ﻿<phone:PhoneApplicationPage
-    x:Class="Ajedrez.MainPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity" xmlns:el="clr-namespace:Microsoft.Expression.Interactivity.Layout;assembly=Microsoft.Expression.Interactions"
+    x:Class="Ajedrez.MainPage"
     mc:Ignorable="d"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
@@ -14,152 +15,163 @@
     shell:SystemTray.IsVisible="True">
 
     <!--LayoutRoot es la cuadrícula raíz donde se coloca todo el contenido de la página-->
-    <Grid x:Name="LayoutRoot" Background="Transparent">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
+	<Grid x:Name="LayoutRoot" Background="Transparent">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="*"/>
+		</Grid.RowDefinitions>
 
-        <!-- NOTA PARA LA TRADUCCIÓN:
-            Para traducir las cadenas mostradas, copia sus valores a las claves con el nombre
-            correspondiente en el archivo de recursos del idioma neutro (AppResources.resx) de la aplicación y
-            reemplaza el valor de texto codificado de forma rígida entre las comillas de los atributos
-            con la cláusula de enlace cuya ruta de acceso apunte a ese nombre de cadena.
-
-            Por ejemplo:
-
-                Text="{Binding Path=LocalizedResources.ApplicationTitle, Source={StaticResource LocalizedStrings}}"
-
-            Este enlace apunta al recurso de cadena de la plantilla denominado "ApplicationTitle".
-
-            Al agregar idiomas admitidos en la pestaña Propiedades del proyecto se creará un
-            nuevo archivo resx por idioma que puede contener los valores traducidos de las
-            cadenas de la interfaz de usuario. El enlace de estos ejemplos hará que el valor de los atributos
-            se tome del archivo .resx correspondiente al valor de
-            CurrentUICulture de la aplicación en tiempo de ejecución.
-         -->
-
-        <!--TitlePanel contiene el nombre de la aplicación y el título de la página-->
-        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock Text="MI APLICACIÓN" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0"/>
-            <TextBlock Text="nombre de la página" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+		<!--<Image Source="/Assets/AlignmentGrid.png" VerticalAlignment="Top" Height="800" Width="480" Margin="0,-32,0,0" Grid.Row="0" Grid.RowSpan="2" IsHitTestVisible="False" />-->
+    <!--TitlePanel contiene el nombre de la aplicación y el título de la página-->
+		<StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
+			<TextBlock Text="MI APLICACIÓN" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0"/>
+			<TextBlock Text="nombre de la página" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+            <TextBlock x:Name="txtInfo" Text="Es el turno del Jugador 1" />
         </StackPanel>
 
         <!--ContentPanel. Colocar aquí el contenido adicional-->
-        <Grid x:Name="ContentPanel" Grid.Row="1" Width="440" Height="440">
-            <!--se define ocho columnas-->
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-            </Grid.ColumnDefinitions>
-            <!--se define ocho filas-->
-            <Grid.RowDefinitions>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
-            </Grid.RowDefinitions>
-          <!-- agregando los cuadros(objeto rectangulo) en el tablero-->
-            <Rectangle Grid.Row="0" Grid.Column="0" Fill="#FF10CFEE" />
-            <Rectangle Grid.Row="0" Grid.Column="2" Fill="#FF10CFEE" />
-            <Rectangle Grid.Row="0" Grid.Column="4" Fill="#FF10CFEE" />
-            <Rectangle Grid.Row="0" Grid.Column="6" Fill="#FF10CFEE" />
+		<Grid x:Name="ContentPanel" Grid.Row="1" Width="440" Height="440">
+			<!--se define ocho columnas-->
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition/>
+				<ColumnDefinition/>
+				<ColumnDefinition/>
+				<ColumnDefinition/>
+				<ColumnDefinition/>
+				<ColumnDefinition/>
+				<ColumnDefinition/>
+				<ColumnDefinition/>
+			</Grid.ColumnDefinitions>
+			<!--se define ocho filas-->
+			<Grid.RowDefinitions>
+				<RowDefinition/>
+				<RowDefinition/>
+				<RowDefinition/>
+				<RowDefinition/>
+				<RowDefinition/>
+				<RowDefinition/>
+				<RowDefinition/>
+				<RowDefinition/>
+			</Grid.RowDefinitions>
+			<!-- agregando los cuadros(objeto rectangulo) en el tablero-->
+			<Rectangle Grid.Row="0" Grid.Column="0" Fill="#FF10CFEE" />
+			<Rectangle Grid.Row="0" Grid.Column="2" Fill="#FF10CFEE" />
+			<Rectangle Grid.Row="0" Grid.Column="4" Fill="#FF10CFEE" />
+			<Rectangle Grid.Row="0" Grid.Column="6" Fill="#FF10CFEE" />
 
-            <Rectangle Grid.Row="0" Grid.Column="1" Fill="White" />
-            <Rectangle Grid.Row="0" Grid.Column="3" Fill="White" />
-            <Rectangle Grid.Row="0" Grid.Column="5" Fill="White" />
-            <Rectangle Grid.Row="0" Grid.Column="7" Fill="White" />
+			<Rectangle Grid.Row="0" Grid.Column="1" Fill="#FF7AF78B" />
+			<Rectangle Grid.Row="0" Grid.Column="3" Fill="#FF7AF78B" />
+			<Rectangle Grid.Row="0" Grid.Column="5" Fill="#FF7AF78B" />
+			<Rectangle Grid.Row="0" Grid.Column="7" Fill="#FF7AF78B" />
 
-            <Rectangle Grid.Row="1" Grid.Column="0" Fill="White" />
-            <Rectangle Grid.Row="1" Grid.Column="2" Fill="White" />
-            <Rectangle Grid.Row="1" Grid.Column="4" Fill="White" />
-            <Rectangle Grid.Row="1" Grid.Column="6" Fill="White" />
+			<Rectangle Grid.Row="1" Grid.Column="0" Fill="#FF7AF78B" />
+			<Rectangle Grid.Row="1" Grid.Column="2" Fill="#FF7AF78B" />
+			<Rectangle Grid.Row="1" Grid.Column="4" Fill="#FF7AF78B" />
+			<Rectangle Grid.Row="1" Grid.Column="6" Fill="#FF7AF78B" />
 
-            <Rectangle Grid.Row="1" Grid.Column="1" Fill="#FF10CFEE" />
-            <Rectangle Grid.Row="1" Grid.Column="3" Fill="#FF10CFEE" />
-            <Rectangle Grid.Row="1" Grid.Column="5" Fill="#FF10CFEE" />
-            <Rectangle Grid.Row="1" Grid.Column="7" Fill="#FF10CFEE" />
+			<Rectangle Grid.Row="1" Grid.Column="1" Fill="#FF10CFEE" />
+			<Rectangle Grid.Row="1" Grid.Column="3" Fill="#FF10CFEE" />
+			<Rectangle Grid.Row="1" Grid.Column="5" Fill="#FF10CFEE" />
+			<Rectangle Grid.Row="1" Grid.Column="7" Fill="#FF10CFEE" />
 
-            <Rectangle Grid.Row="2" Grid.Column="0" Fill="#FF10CFEE" />
-            <Rectangle Grid.Row="2" Grid.Column="2" Fill="#FF10CFEE" />
-            <Rectangle Grid.Row="2" Grid.Column="4" Fill="#FF10CFEE" />
-            <Rectangle Grid.Row="2" Grid.Column="6" Fill="#FF10CFEE" />
+			<Rectangle Grid.Row="2" Grid.Column="0" Fill="#FF10CFEE" />
+			<Rectangle Grid.Row="2" Grid.Column="2" Fill="#FF10CFEE" />
+			<Rectangle Grid.Row="2" Grid.Column="4" Fill="#FF10CFEE" />
+			<Rectangle Grid.Row="2" Grid.Column="6" Fill="#FF10CFEE" />
 
-            <Rectangle Grid.Row="2" Grid.Column="1" Fill="White" />
-            <Rectangle Grid.Row="2" Grid.Column="3" Fill="White" />
-            <Rectangle Grid.Row="2" Grid.Column="5" Fill="White" />
-            <Rectangle Grid.Row="2" Grid.Column="7" Fill="White" />
+			<Rectangle Grid.Row="2" Grid.Column="1" Fill="#FF7AF78B" />
+			<Rectangle Grid.Row="2" Grid.Column="3" Fill="#FF7AF78B" />
+			<Rectangle Grid.Row="2" Grid.Column="5" Fill="#FF7AF78B" />
+			<Rectangle Grid.Row="2" Grid.Column="7" Fill="#FF7AF78B" />
 
-            <Rectangle Grid.Row="3" Grid.Column="0" Fill="White" />
-            <Rectangle Grid.Row="3" Grid.Column="2" Fill="White" />
-            <Rectangle Grid.Row="3" Grid.Column="4" Fill="White" />
-            <Rectangle Grid.Row="3" Grid.Column="6" Fill="White" />
+			<Rectangle Grid.Row="3" Grid.Column="0" Fill="#FF7AF78B" />
+			<Rectangle Grid.Row="3" Grid.Column="2" Fill="#FF7AF78B" />
+			<Rectangle Grid.Row="3" Grid.Column="4" Fill="#FF7AF78B" />
+			<Rectangle Grid.Row="3" Grid.Column="6" Fill="#FF7AF78B" />
 
-            <Rectangle Grid.Row="3" Grid.Column="1" Fill="#FF10CFEE" />
-            <Rectangle Grid.Row="3" Grid.Column="3" Fill="#FF10CFEE" />
-            <Rectangle Grid.Row="3" Grid.Column="5" Fill="#FF10CFEE" />
-            <Rectangle Grid.Row="3" Grid.Column="7" Fill="#FF10CFEE" />
+			<Rectangle Grid.Row="3" Grid.Column="1" Fill="#FF10CFEE" />
+			<Rectangle Grid.Row="3" Grid.Column="3" Fill="#FF10CFEE" />
+			<Rectangle Grid.Row="3" Grid.Column="5" Fill="#FF10CFEE" />
+			<Rectangle Grid.Row="3" Grid.Column="7" Fill="#FF10CFEE" />
 
-            <Rectangle Grid.Row="4" Grid.Column="0" Fill="#FF10CFEE" />
-            <Rectangle Grid.Row="4" Grid.Column="2" Fill="#FF10CFEE" />
-            <Rectangle Grid.Row="4" Grid.Column="4" Fill="#FF10CFEE" />
-            <Rectangle Grid.Row="4" Grid.Column="6" Fill="#FF10CFEE" />
+			<Rectangle Grid.Row="4" Grid.Column="0" Fill="#FF10CFEE" />
+			<Rectangle Grid.Row="4" Grid.Column="2" Fill="#FF10CFEE" />
+			<Rectangle Grid.Row="4" Grid.Column="4" Fill="#FF10CFEE" />
+			<Rectangle Grid.Row="4" Grid.Column="6" Fill="#FF10CFEE" />
 
-            <Rectangle Grid.Row="4" Grid.Column="1" Fill="White" />
-            <Rectangle Grid.Row="4" Grid.Column="3" Fill="White" />
-            <Rectangle Grid.Row="4" Grid.Column="5" Fill="White" />
-            <Rectangle Grid.Row="4" Grid.Column="7" Fill="White" />
+			<Rectangle Grid.Row="4" Grid.Column="1" Fill="#FF7AF78B" />
+			<Rectangle Grid.Row="4" Grid.Column="3" Fill="#FF7AF78B" />
+			<Rectangle Grid.Row="4" Grid.Column="5" Fill="#FF7AF78B" />
+			<Rectangle Grid.Row="4" Grid.Column="7" Fill="#FF7AF78B" />
 
-            <Rectangle Grid.Row="5" Grid.Column="0" Fill="White" />
-            <Rectangle Grid.Row="5" Grid.Column="2" Fill="White" />
-            <Rectangle Grid.Row="5" Grid.Column="4" Fill="White" />
-            <Rectangle Grid.Row="5" Grid.Column="6" Fill="White" />
+			<Rectangle Grid.Row="5" Grid.Column="0" Fill="#FF7AF78B" />
+			<Rectangle Grid.Row="5" Grid.Column="2" Fill="#FF7AF78B" />
+			<Rectangle Grid.Row="5" Grid.Column="4" Fill="#FF7AF78B" />
+			<Rectangle Grid.Row="5" Grid.Column="6" Fill="#FF7AF78B" />
 
-            <Rectangle Grid.Row="5" Grid.Column="1" Fill="#FF10CFEE" />
-            <Rectangle Grid.Row="5" Grid.Column="3" Fill="#FF10CFEE" />
-            <Rectangle Grid.Row="5" Grid.Column="5" Fill="#FF10CFEE" />
-            <Rectangle Grid.Row="5" Grid.Column="7" Fill="#FF10CFEE" />
+			<Rectangle Grid.Row="5" Grid.Column="1" Fill="#FF10CFEE" />
+			<Rectangle Grid.Row="5" Grid.Column="3" Fill="#FF10CFEE" />
+			<Rectangle Grid.Row="5" Grid.Column="5" Fill="#FF10CFEE" />
+			<Rectangle Grid.Row="5" Grid.Column="7" Fill="#FF10CFEE" />
 
-            <Rectangle Grid.Row="6" Grid.Column="0" Fill="#FF10CFEE" />
-            <Rectangle Grid.Row="6" Grid.Column="2" Fill="#FF10CFEE" />
-            <Rectangle Grid.Row="6" Grid.Column="4" Fill="#FF10CFEE" />
-            <Rectangle Grid.Row="6" Grid.Column="6" Fill="#FF10CFEE" />
+			<Rectangle Grid.Row="6" Grid.Column="0" Fill="#FF10CFEE" />
+			<Rectangle Grid.Row="6" Grid.Column="2" Fill="#FF10CFEE" />
+			<Rectangle Grid.Row="6" Grid.Column="4" Fill="#FF10CFEE" />
+			<Rectangle Grid.Row="6" Grid.Column="6" Fill="#FF10CFEE" />
 
-            <Rectangle Grid.Row="6" Grid.Column="1" Fill="White" />
-            <Rectangle Grid.Row="6" Grid.Column="3" Fill="White" />
-            <Rectangle Grid.Row="6" Grid.Column="5" Fill="White" />
-            <Rectangle Grid.Row="6" Grid.Column="7" Fill="White" />
+			<Rectangle Grid.Row="6" Grid.Column="1" Fill="#FF7AF78B" />
+			<Rectangle Grid.Row="6" Grid.Column="3" Fill="#FF7AF78B" />
+			<Rectangle Grid.Row="6" Grid.Column="5" Fill="#FF7AF78B" />
+			<Rectangle Grid.Row="6" Grid.Column="7" Fill="#FF7AF78B" />
 
-            <Rectangle Grid.Row="7" Grid.Column="0" Fill="White" />
-            <Rectangle Grid.Row="7" Grid.Column="2" Fill="White" />
-            <Rectangle Grid.Row="7" Grid.Column="4" Fill="White" />
-            <Rectangle Grid.Row="7" Grid.Column="6" Fill="White" />
+			<Rectangle Grid.Row="7" Grid.Column="0" Fill="#FF7AF78B" />
+            <Rectangle Grid.Row="7" Grid.Column="2" Fill="#FF7AF78B" />
+			<Rectangle Grid.Row="7" Grid.Column="4" Fill="#FF7AF78B" />
+			<Rectangle Grid.Row="7" Grid.Column="6" Fill="#FF7AF78B" />
 
-            <Rectangle Grid.Row="7" Grid.Column="1" Fill="#FF10CFEE" />
-            <Rectangle Grid.Row="7" Grid.Column="3" Fill="#FF10CFEE" />
-            <Rectangle Grid.Row="7" Grid.Column="5" Fill="#FF10CFEE" />
-            <Rectangle Grid.Row="7" Grid.Column="7" Fill="#FF10CFEE" />
+			<Rectangle Grid.Row="7" Grid.Column="1" Fill="#FF10CFEE" />
+			<Rectangle Grid.Row="7" Grid.Column="3" Fill="#FF10CFEE" />
+			<Rectangle Grid.Row="7" Grid.Column="5" Fill="#FF10CFEE" />
+			<Rectangle Grid.Row="7" Grid.Column="7" Fill="#FF10CFEE" />
 
 
-        </Grid>
+            <!--Piezas Negras-->
+            <Image x:Name="Torre1" Margin="5" Source="/Assets/Imagen/black_rook.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Image x:Name="Caballo1" Grid.Column="1" Margin="5" Source="/Assets/Imagen/black_caballo.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Image x:Name="Alfil" Grid.Column="2" Margin="5" Source="/Assets/Imagen/black_bishop.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Image x:Name="Rey" Grid.Column="3" Margin="5" Source="/Assets/Imagen/black_rey.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Image x:Name="Reyna" Grid.Column="4" Margin="5" Source="/Assets/Imagen/black_reina.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Image x:Name="Alfil1" Grid.Column="5" Margin="5" Source="/Assets/Imagen/black_bishop.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Image x:Name="Caballo2" Grid.Column="6" Margin="5" Source="/Assets/Imagen/black_caballo.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Image x:Name="Torre2" Grid.Column="7" Margin="5" Source="/Assets/Imagen/black_rook.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Image x:Name="Peon" Margin="5" Grid.Row="1" Source="/Assets/Imagen/black_peon.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" MouseLeave="Peon_MouseLeave"/>
+            <Image x:Name="Peon1" Margin="5" Grid.Row="1" Source="/Assets/Imagen/black_peon.png" Stretch="Fill" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Image x:Name="Peon2" Margin="5" Grid.Row="1" Source="/Assets/Imagen/black_peon.png" Stretch="Fill" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Image x:Name="Peon3" Margin="5" Grid.Row="1" Source="/Assets/Imagen/black_peon.png" Stretch="Fill" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Image x:Name="Peon4" Margin="5" Grid.Row="1" Source="/Assets/Imagen/black_peon.png" Stretch="Fill" Grid.Column="4" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Image x:Name="Peon5" Margin="5" Grid.Row="1" Source="/Assets/Imagen/black_peon.png" Stretch="Fill" Grid.Column="5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Image x:Name="Peon6" Margin="5" Grid.Row="1" Source="/Assets/Imagen/black_peon.png" Stretch="Fill" Grid.Column="6" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Image x:Name="Peon7" Margin="5" Grid.Row="1" Source="/Assets/Imagen/black_peon.png" Stretch="Fill" Grid.Column="7" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
-        <!--Quitar la marca de comentarios para ver una cuadrícula de alineación que
-            ayuda a comprobar que los controles están alineados en los límites normales.  La imagen tiene un margen superior de -32px para
-            tener en cuenta la bandeja del sistema. Establécelo en 0 (o quite el margen)
-            si la bandeja del sistema está oculta.
-
-            Antes de enviarla, quita este código XAML y la propia imagen.-->
-        <!--<Image Source="/Assets/AlignmentGrid.png" VerticalAlignment="Top" Height="800" Width="480" Margin="0,-32,0,0" Grid.Row="0" Grid.RowSpan="2" IsHitTestVisible="False" />-->
-    </Grid>
+            <!--Piezas Blancas-->
+            <Image x:Name="Peon8" Margin="5" Grid.Row="6" Source="/Assets/Imagen/white_peon.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+			<Image x:Name="Peon9" Margin="5" Grid.Row="6" Source="/Assets/Imagen/white_peon.png" Stretch="Fill" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+			<Image x:Name="Peon10" Margin="5" Grid.Row="6" Source="/Assets/Imagen/white_peon.png" Stretch="Fill" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+			<Image x:Name="Peon11" Margin="5" Grid.Row="6" Source="/Assets/Imagen/white_peon.png" Stretch="Fill" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+			<Image x:Name="Peon12" Margin="5" Grid.Row="6" Source="/Assets/Imagen/white_peon.png" Stretch="Fill" Grid.Column="4" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+			<Image x:Name="Peon13" Margin="5" Grid.Row="6" Source="/Assets/Imagen/white_peon.png" Stretch="Fill" Grid.Column="5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+			<Image x:Name="Peon14" Margin="5" Grid.Row="6" Source="/Assets/Imagen/white_peon.png" Stretch="Fill" Grid.Column="6" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+			<Image x:Name="Peon15" Margin="5" Grid.Row="6" Source="/Assets/Imagen/white_peon.png" Stretch="Fill" Grid.Column="7" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+			<Image x:Name="Torre" Margin="5" Grid.Row="7" Source="/Assets/Imagen/white_rook.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Image x:Name="Alfil2" Grid.Column="1" Margin="5" Grid.Row="7" Source="/Assets/Imagen/white_bishop.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Image x:Name="Caballo" Grid.Column="2" Margin="5" Grid.Row="7" Source="/Assets/Imagen/white_caballo.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Image x:Name="Rey1" Grid.Column="3" Margin="5" Grid.Row="7" Source="/Assets/Imagen/white_rey.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Image x:Name="Reyna1" Grid.Column="4" Margin="5" Grid.Row="7" Source="/Assets/Imagen/white_reina.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Image x:Name="Caballo3" Grid.Column="5" Margin="5" Grid.Row="7" Source="/Assets/Imagen/white_caballo.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Image x:Name="Alfil3" Grid.Column="6" Margin="5" Grid.Row="7" Source="/Assets/Imagen/white_bishop.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Image x:Name="Torre3" Margin="5" Grid.Row="7" Source="/Assets/Imagen/white_rook.png" Stretch="Fill" Grid.Column="7" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        		
+		</Grid>
+	</Grid>
 
 </phone:PhoneApplicationPage>

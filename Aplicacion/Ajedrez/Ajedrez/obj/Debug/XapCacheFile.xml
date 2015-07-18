@@ -1,12 +1,26 @@
-﻿<xapCache source="C:\Users\rogelio\Desktop\PROYECTO-AJEDREZ\Aplicacion\Ajedrez\Ajedrez\Bin\Debug\Ajedrez_Debug_AnyCPU.xap" wasSigned="False" wasTritonized="False" certificateThumbprint="" TimeStampUrl="" signKeyFile="" signKeyPassword="" lastWriteTime="02/07/2015 6:47:17">
-  <file source="C:\Users\rogelio\Desktop\PROYECTO-AJEDREZ\Aplicacion\Ajedrez\Ajedrez\obj\Debug\Ajedrez.dll" archivePath="Ajedrez.dll" lastWriteTime="02/07/2015 6:47:17" />
+﻿<xapCache source="C:\Users\rogelio\Desktop\PROYECTO-AJEDREZ\Aplicacion\Ajedrez\Ajedrez\Bin\Debug\Ajedrez_Debug_AnyCPU.xap" wasSigned="False" wasTritonized="False" certificateThumbprint="" TimeStampUrl="" signKeyFile="" signKeyPassword="" lastWriteTime="13/07/2015 7:08:37">
+  <file source="C:\Users\rogelio\Desktop\PROYECTO-AJEDREZ\Aplicacion\Ajedrez\Ajedrez\obj\Debug\Ajedrez.dll" archivePath="Ajedrez.dll" lastWriteTime="13/07/2015 7:08:35" />
   <file source="C:\Users\rogelio\Desktop\PROYECTO-AJEDREZ\Aplicacion\Ajedrez\Ajedrez\Assets\AlignmentGrid.png" archivePath="Assets\AlignmentGrid.png" lastWriteTime="01/07/2015 5:50:00" />
+  <file source="C:\Users\rogelio\Desktop\PROYECTO-AJEDREZ\Aplicacion\Ajedrez\Ajedrez\Assets\Imagen\black_bishop.png" archivePath="Assets\Imagen\black_bishop.png" lastWriteTime="07/07/2015 14:50:33" />
+  <file source="C:\Users\rogelio\Desktop\PROYECTO-AJEDREZ\Aplicacion\Ajedrez\Ajedrez\Assets\Imagen\black_caballo.png" archivePath="Assets\Imagen\black_caballo.png" lastWriteTime="07/07/2015 14:50:33" />
+  <file source="C:\Users\rogelio\Desktop\PROYECTO-AJEDREZ\Aplicacion\Ajedrez\Ajedrez\Assets\Imagen\black_peon.png" archivePath="Assets\Imagen\black_peon.png" lastWriteTime="07/07/2015 14:50:33" />
+  <file source="C:\Users\rogelio\Desktop\PROYECTO-AJEDREZ\Aplicacion\Ajedrez\Ajedrez\Assets\Imagen\black_reina.png" archivePath="Assets\Imagen\black_reina.png" lastWriteTime="07/07/2015 14:50:33" />
+  <file source="C:\Users\rogelio\Desktop\PROYECTO-AJEDREZ\Aplicacion\Ajedrez\Ajedrez\Assets\Imagen\black_rey.png" archivePath="Assets\Imagen\black_rey.png" lastWriteTime="07/07/2015 14:50:33" />
+  <file source="C:\Users\rogelio\Desktop\PROYECTO-AJEDREZ\Aplicacion\Ajedrez\Ajedrez\Assets\Imagen\black_rook.png" archivePath="Assets\Imagen\black_rook.png" lastWriteTime="07/07/2015 14:50:33" />
+  <file source="C:\Users\rogelio\Desktop\PROYECTO-AJEDREZ\Aplicacion\Ajedrez\Ajedrez\Assets\Imagen\white_bishop.png" archivePath="Assets\Imagen\white_bishop.png" lastWriteTime="07/07/2015 14:50:33" />
+  <file source="C:\Users\rogelio\Desktop\PROYECTO-AJEDREZ\Aplicacion\Ajedrez\Ajedrez\Assets\Imagen\white_caballo.png" archivePath="Assets\Imagen\white_caballo.png" lastWriteTime="07/07/2015 14:50:32" />
+  <file source="C:\Users\rogelio\Desktop\PROYECTO-AJEDREZ\Aplicacion\Ajedrez\Ajedrez\Assets\Imagen\white_peon.png" archivePath="Assets\Imagen\white_peon.png" lastWriteTime="07/07/2015 14:50:32" />
+  <file source="C:\Users\rogelio\Desktop\PROYECTO-AJEDREZ\Aplicacion\Ajedrez\Ajedrez\Assets\Imagen\white_reina.png" archivePath="Assets\Imagen\white_reina.png" lastWriteTime="07/07/2015 14:50:32" />
+  <file source="C:\Users\rogelio\Desktop\PROYECTO-AJEDREZ\Aplicacion\Ajedrez\Ajedrez\Assets\Imagen\white_rey.png" archivePath="Assets\Imagen\white_rey.png" lastWriteTime="07/07/2015 14:50:33" />
+  <file source="C:\Users\rogelio\Desktop\PROYECTO-AJEDREZ\Aplicacion\Ajedrez\Ajedrez\Assets\Imagen\white_rook.png" archivePath="Assets\Imagen\white_rook.png" lastWriteTime="07/07/2015 14:50:33" />
   <file source="C:\Users\rogelio\Desktop\PROYECTO-AJEDREZ\Aplicacion\Ajedrez\Ajedrez\Assets\Tiles\FlipCycleTileLarge.png" archivePath="Assets\Tiles\FlipCycleTileLarge.png" lastWriteTime="01/07/2015 5:50:00" />
   <file source="C:\Users\rogelio\Desktop\PROYECTO-AJEDREZ\Aplicacion\Ajedrez\Ajedrez\Assets\Tiles\FlipCycleTileSmall.png" archivePath="Assets\Tiles\FlipCycleTileSmall.png" lastWriteTime="01/07/2015 5:50:00" />
   <file source="C:\Users\rogelio\Desktop\PROYECTO-AJEDREZ\Aplicacion\Ajedrez\Ajedrez\Assets\Tiles\IconicTileMediumLarge.png" archivePath="Assets\Tiles\IconicTileMediumLarge.png" lastWriteTime="01/07/2015 5:50:00" />
   <file source="C:\Users\rogelio\Desktop\PROYECTO-AJEDREZ\Aplicacion\Ajedrez\Ajedrez\Assets\Tiles\IconicTileSmall.png" archivePath="Assets\Tiles\IconicTileSmall.png" lastWriteTime="01/07/2015 5:50:00" />
-  <file source="C:\Users\rogelio\Desktop\PROYECTO-AJEDREZ\Aplicacion\Ajedrez\Ajedrez\Bin\Debug\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="01/07/2015 5:50:15" />
+  <file source="C:\Users\rogelio\Desktop\PROYECTO-AJEDREZ\Aplicacion\Ajedrez\Ajedrez\Bin\Debug\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="07/07/2015 15:02:21" />
   <file source="C:\Users\rogelio\Desktop\PROYECTO-AJEDREZ\Aplicacion\Ajedrez\Ajedrez\Bin\Debug\Assets\ApplicationIcon.png" archivePath="Assets\ApplicationIcon.png" lastWriteTime="01/07/2015 5:50:00" />
   <file source="C:\Users\rogelio\Desktop\PROYECTO-AJEDREZ\Aplicacion\Ajedrez\Ajedrez\Bin\Debug\Assets\Tiles\FlipCycleTileMedium.png" archivePath="Assets\Tiles\FlipCycleTileMedium.png" lastWriteTime="01/07/2015 5:50:00" />
+  <file source="C:\Program Files (x86)\Microsoft SDKs\Expression\Blend\Windows Phone\v8.0\Libraries\Microsoft.Expression.Interactions.dll" archivePath="Microsoft.Expression.Interactions.dll" lastWriteTime="25/09/2012 1:41:02" />
+  <file source="C:\Program Files (x86)\Microsoft SDKs\Expression\Blend\Windows Phone\v8.0\Libraries\System.Windows.Interactivity.dll" archivePath="System.Windows.Interactivity.dll" lastWriteTime="25/09/2012 1:41:02" />
   <file source="C:\Users\rogelio\Desktop\PROYECTO-AJEDREZ\Aplicacion\Ajedrez\Ajedrez\Bin\Debug\Properties\WMAppManifest.xml" archivePath="WMAppManifest.xml" lastWriteTime="01/07/2015 5:50:17" />
 </xapCache>

@@ -25,6 +25,7 @@
     <ValidateXaml>true</ValidateXaml>
     <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
     <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <ExpressionBlendVersion>12.0.41002.1</ExpressionBlendVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -90,6 +91,19 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Ajedrez\Color.cs" />
+    <Compile Include="Ajedrez\EstadoCasilla.cs" />
+    <Compile Include="Ajedrez\IJugador.cs" />
+    <Compile Include="Ajedrez\IPartidaAjedrez.cs" />
+    <Compile Include="Ajedrez\IPieza.cs" />
+    <Compile Include="Ajedrez\ITablero.cs" />
+    <Compile Include="Ajedrez\Jugador.cs" />
+    <Compile Include="Ajedrez\Maquina.cs" />
+    <Compile Include="Ajedrez\Movimiento.cs" />
+    <Compile Include="Ajedrez\Movimientos.cs" />
+    <Compile Include="Ajedrez\Pieza.cs" />
+    <Compile Include="Ajedrez\Posicion.cs" />
+    <Compile Include="Ajedrez\Tablero.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
@@ -97,6 +111,12 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Piezas\Alfil.cs" />
+    <Compile Include="Piezas\Caballo.cs" />
+    <Compile Include="Piezas\Peon.cs" />
+    <Compile Include="Piezas\Rey.cs" />
+    <Compile Include="Piezas\Reyna.cs" />
+    <Compile Include="Piezas\Torre.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\AppResources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -125,6 +145,18 @@
     <Content Include="Assets\ApplicationIcon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Assets\Imagen\black_bishop.png" />
+    <Content Include="Assets\Imagen\black_caballo.png" />
+    <Content Include="Assets\Imagen\black_peon.png" />
+    <Content Include="Assets\Imagen\black_reina.png" />
+    <Content Include="Assets\Imagen\black_rey.png" />
+    <Content Include="Assets\Imagen\black_rook.png" />
+    <Content Include="Assets\Imagen\white_bishop.png" />
+    <Content Include="Assets\Imagen\white_caballo.png" />
+    <Content Include="Assets\Imagen\white_peon.png" />
+    <Content Include="Assets\Imagen\white_reina.png" />
+    <Content Include="Assets\Imagen\white_rey.png" />
+    <Content Include="Assets\Imagen\white_rook.png" />
     <Content Include="Assets\Tiles\FlipCycleTileLarge.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -147,6 +179,11 @@
       <LastGenOutput>AppResources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Expression.Interactions" />
+    <Reference Include="System.Windows.Interactivity" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
