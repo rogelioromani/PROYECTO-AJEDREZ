@@ -15,16 +15,16 @@
     shell:SystemTray.IsVisible="True">
 
     <!--LayoutRoot es la cuadrícula raíz donde se coloca todo el contenido de la página-->
-	<Grid x:Name="LayoutRoot" Background="Transparent" RenderTransformOrigin="0.487,0.492">
-		<Grid.RowDefinitions>
-			<RowDefinition Height="Auto" MinHeight="387"/>
-			<RowDefinition/>
-		</Grid.RowDefinitions>
+    <Grid x:Name="LayoutRoot" Background="Transparent" RenderTransformOrigin="0.487,0.492">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" MinHeight="752"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
 
-		<!--<Image Source="/Assets/AlignmentGrid.png" VerticalAlignment="Top" Height="800" Width="480" Margin="0,-32,0,0" Grid.Row="0" Grid.RowSpan="2" IsHitTestVisible="False" />-->
-    <!--TitlePanel contiene el nombre de la aplicación y el título de la página-->
-		<StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="10,0,0,214">
-			<TextBlock x:Name="txtB" Text="Blancas" Margin="0,0,396,0" />
+        <!--<Image Source="/Assets/AlignmentGrid.png" VerticalAlignment="Top" Height="800" Width="480" Margin="0,-32,0,0" Grid.Row="0" Grid.RowSpan="2" IsHitTestVisible="False" />-->
+        <!--TitlePanel contiene el nombre de la aplicación y el título de la página-->
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="10,0,0,214">
+            <TextBlock x:Name="txtB" Text="Blancas" Margin="0,0,396,0" />
             <TextBox x:Name="negras" Margin="0,0,290,0"/>
             <TextBlock x:Name="txtN" Text="Negras" Margin="0,0,396,0" />
             <TextBox x:Name="blancas" Margin="0,0,290,0"/>
@@ -35,109 +35,109 @@
         </StackPanel>
 
         <!--ContentPanel. Colocar aquí el contenido adicional-->
-		<Grid x:Name="ContentPanel" Margin="20,317,20,11" Grid.RowSpan="2">
-			<!--se define ocho columnas-->
-			<Grid.ColumnDefinitions>
-				<ColumnDefinition/>
-				<ColumnDefinition/>
-				<ColumnDefinition/>
-				<ColumnDefinition/>
-				<ColumnDefinition/>
-				<ColumnDefinition/>
-				<ColumnDefinition/>
-				<ColumnDefinition/>
-			</Grid.ColumnDefinitions>
-			<!--se define ocho filas-->
-			<Grid.RowDefinitions>
-				<RowDefinition/>
-				<RowDefinition/>
-				<RowDefinition/>
-				<RowDefinition/>
-				<RowDefinition/>
-				<RowDefinition/>
-				<RowDefinition/>
-				<RowDefinition/>
-			</Grid.RowDefinitions>
-			<!-- agregando los cuadros(objeto rectangulo) en el tablero-->
-			<Rectangle Grid.Row="0" Grid.Column="0" Fill="#FF10CFEE" />
-			<Rectangle Grid.Row="0" Grid.Column="2" Fill="#FF10CFEE" />
-			<Rectangle Grid.Row="0" Grid.Column="4" Fill="#FF10CFEE" />
-			<Rectangle Grid.Row="0" Grid.Column="6" Fill="#FF10CFEE" />
+        <Grid x:Name="ContentPanel" Margin="20,317,20,0">
+            <!--se define ocho columnas-->
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <!--se define ocho filas-->
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <!-- agregando los cuadros(objeto rectangulo) en el tablero-->
+            <Rectangle Grid.Row="0" Grid.Column="0" Fill="#FF10CFEE" />
+            <Rectangle Grid.Row="0" Grid.Column="2" Fill="#FF10CFEE" />
+            <Rectangle Grid.Row="0" Grid.Column="4" Fill="#FF10CFEE" />
+            <Rectangle Grid.Row="0" Grid.Column="6" Fill="#FF10CFEE" />
 
-			<Rectangle Grid.Row="0" Grid.Column="1" Fill="#FF7AF78B" />
-			<Rectangle Grid.Row="0" Grid.Column="3" Fill="#FF7AF78B" />
-			<Rectangle Grid.Row="0" Grid.Column="5" Fill="#FF7AF78B" />
-			<Rectangle Grid.Row="0" Grid.Column="7" Fill="#FF7AF78B" />
+            <Rectangle Grid.Row="0" Grid.Column="1" Fill="#FF7AF78B" />
+            <Rectangle Grid.Row="0" Grid.Column="3" Fill="#FF7AF78B" />
+            <Rectangle Grid.Row="0" Grid.Column="5" Fill="#FF7AF78B" />
+            <Rectangle Grid.Row="0" Grid.Column="7" Fill="#FF7AF78B" />
 
-			<Rectangle Grid.Row="1" Grid.Column="0" Fill="#FF7AF78B" />
-			<Rectangle Grid.Row="1" Grid.Column="2" Fill="#FF7AF78B" />
-			<Rectangle Grid.Row="1" Grid.Column="4" Fill="#FF7AF78B" />
-			<Rectangle Grid.Row="1" Grid.Column="6" Fill="#FF7AF78B" />
+            <Rectangle Grid.Row="1" Grid.Column="0" Fill="#FF7AF78B" />
+            <Rectangle Grid.Row="1" Grid.Column="2" Fill="#FF7AF78B" />
+            <Rectangle Grid.Row="1" Grid.Column="4" Fill="#FF7AF78B" />
+            <Rectangle Grid.Row="1" Grid.Column="6" Fill="#FF7AF78B" />
 
-			<Rectangle Grid.Row="1" Grid.Column="1" Fill="#FF10CFEE" />
-			<Rectangle Grid.Row="1" Grid.Column="3" Fill="#FF10CFEE" />
-			<Rectangle Grid.Row="1" Grid.Column="5" Fill="#FF10CFEE" />
-			<Rectangle Grid.Row="1" Grid.Column="7" Fill="#FF10CFEE" />
+            <Rectangle Grid.Row="1" Grid.Column="1" Fill="#FF10CFEE" />
+            <Rectangle Grid.Row="1" Grid.Column="3" Fill="#FF10CFEE" />
+            <Rectangle Grid.Row="1" Grid.Column="5" Fill="#FF10CFEE" />
+            <Rectangle Grid.Row="1" Grid.Column="7" Fill="#FF10CFEE" />
 
-			<Rectangle Grid.Row="2" Grid.Column="0" Fill="#FF10CFEE" />
-			<Rectangle Grid.Row="2" Grid.Column="2" Fill="#FF10CFEE" />
-			<Rectangle Grid.Row="2" Grid.Column="4" Fill="#FF10CFEE" />
-			<Rectangle Grid.Row="2" Grid.Column="6" Fill="#FF10CFEE" />
+            <Rectangle Grid.Row="2" Grid.Column="0" Fill="#FF10CFEE" />
+            <Rectangle Grid.Row="2" Grid.Column="2" Fill="#FF10CFEE" />
+            <Rectangle Grid.Row="2" Grid.Column="4" Fill="#FF10CFEE" />
+            <Rectangle Grid.Row="2" Grid.Column="6" Fill="#FF10CFEE" />
 
-			<Rectangle Grid.Row="2" Grid.Column="1" Fill="#FF7AF78B" />
-			<Rectangle Grid.Row="2" Grid.Column="3" Fill="#FF7AF78B" />
-			<Rectangle Grid.Row="2" Grid.Column="5" Fill="#FF7AF78B" />
-			<Rectangle Grid.Row="2" Grid.Column="7" Fill="#FF7AF78B" />
+            <Rectangle Grid.Row="2" Grid.Column="1" Fill="#FF7AF78B" />
+            <Rectangle Grid.Row="2" Grid.Column="3" Fill="#FF7AF78B" />
+            <Rectangle Grid.Row="2" Grid.Column="5" Fill="#FF7AF78B" />
+            <Rectangle Grid.Row="2" Grid.Column="7" Fill="#FF7AF78B" />
 
-			<Rectangle Grid.Row="3" Grid.Column="0" Fill="#FF7AF78B" />
-			<Rectangle Grid.Row="3" Grid.Column="2" Fill="#FF7AF78B" />
-			<Rectangle Grid.Row="3" Grid.Column="4" Fill="#FF7AF78B" />
-			<Rectangle Grid.Row="3" Grid.Column="6" Fill="#FF7AF78B" />
+            <Rectangle Grid.Row="3" Grid.Column="0" Fill="#FF7AF78B" />
+            <Rectangle Grid.Row="3" Grid.Column="2" Fill="#FF7AF78B" />
+            <Rectangle Grid.Row="3" Grid.Column="4" Fill="#FF7AF78B" />
+            <Rectangle Grid.Row="3" Grid.Column="6" Fill="#FF7AF78B" />
 
-			<Rectangle Grid.Row="3" Grid.Column="1" Fill="#FF10CFEE" />
-			<Rectangle Grid.Row="3" Grid.Column="3" Fill="#FF10CFEE" />
-			<Rectangle Grid.Row="3" Grid.Column="5" Fill="#FF10CFEE" />
-			<Rectangle Grid.Row="3" Grid.Column="7" Fill="#FF10CFEE" />
+            <Rectangle Grid.Row="3" Grid.Column="1" Fill="#FF10CFEE" />
+            <Rectangle Grid.Row="3" Grid.Column="3" Fill="#FF10CFEE" />
+            <Rectangle Grid.Row="3" Grid.Column="5" Fill="#FF10CFEE" />
+            <Rectangle Grid.Row="3" Grid.Column="7" Fill="#FF10CFEE" />
 
-			<Rectangle Grid.Row="4" Grid.Column="0" Fill="#FF10CFEE" />
-			<Rectangle Grid.Row="4" Grid.Column="2" Fill="#FF10CFEE" />
-			<Rectangle Grid.Row="4" Grid.Column="4" Fill="#FF10CFEE" />
-			<Rectangle Grid.Row="4" Grid.Column="6" Fill="#FF10CFEE" />
+            <Rectangle Grid.Row="4" Grid.Column="0" Fill="#FF10CFEE" />
+            <Rectangle Grid.Row="4" Grid.Column="2" Fill="#FF10CFEE" />
+            <Rectangle Grid.Row="4" Grid.Column="4" Fill="#FF10CFEE" />
+            <Rectangle Grid.Row="4" Grid.Column="6" Fill="#FF10CFEE" />
 
-			<Rectangle Grid.Row="4" Grid.Column="1" Fill="#FF7AF78B" />
-			<Rectangle Grid.Row="4" Grid.Column="3" Fill="#FF7AF78B" />
-			<Rectangle Grid.Row="4" Grid.Column="5" Fill="#FF7AF78B" />
-			<Rectangle Grid.Row="4" Grid.Column="7" Fill="#FF7AF78B" />
+            <Rectangle Grid.Row="4" Grid.Column="1" Fill="#FF7AF78B" />
+            <Rectangle Grid.Row="4" Grid.Column="3" Fill="#FF7AF78B" />
+            <Rectangle Grid.Row="4" Grid.Column="5" Fill="#FF7AF78B" />
+            <Rectangle Grid.Row="4" Grid.Column="7" Fill="#FF7AF78B" />
 
-			<Rectangle Grid.Row="5" Grid.Column="0" Fill="#FF7AF78B" />
-			<Rectangle Grid.Row="5" Grid.Column="2" Fill="#FF7AF78B" />
-			<Rectangle Grid.Row="5" Grid.Column="4" Fill="#FF7AF78B" />
-			<Rectangle Grid.Row="5" Grid.Column="6" Fill="#FF7AF78B" />
+            <Rectangle Grid.Row="5" Grid.Column="0" Fill="#FF7AF78B" />
+            <Rectangle Grid.Row="5" Grid.Column="2" Fill="#FF7AF78B" />
+            <Rectangle Grid.Row="5" Grid.Column="4" Fill="#FF7AF78B" />
+            <Rectangle Grid.Row="5" Grid.Column="6" Fill="#FF7AF78B" />
 
-			<Rectangle Grid.Row="5" Grid.Column="1" Fill="#FF10CFEE" />
-			<Rectangle Grid.Row="5" Grid.Column="3" Fill="#FF10CFEE" />
-			<Rectangle Grid.Row="5" Grid.Column="5" Fill="#FF10CFEE" />
-			<Rectangle Grid.Row="5" Grid.Column="7" Fill="#FF10CFEE" />
+            <Rectangle Grid.Row="5" Grid.Column="1" Fill="#FF10CFEE" />
+            <Rectangle Grid.Row="5" Grid.Column="3" Fill="#FF10CFEE" />
+            <Rectangle Grid.Row="5" Grid.Column="5" Fill="#FF10CFEE" />
+            <Rectangle Grid.Row="5" Grid.Column="7" Fill="#FF10CFEE" />
 
-			<Rectangle Grid.Row="6" Grid.Column="0" Fill="#FF10CFEE" />
-			<Rectangle Grid.Row="6" Grid.Column="2" Fill="#FF10CFEE" />
-			<Rectangle Grid.Row="6" Grid.Column="4" Fill="#FF10CFEE" />
-			<Rectangle Grid.Row="6" Grid.Column="6" Fill="#FF10CFEE" />
+            <Rectangle Grid.Row="6" Grid.Column="0" Fill="#FF10CFEE" />
+            <Rectangle Grid.Row="6" Grid.Column="2" Fill="#FF10CFEE" />
+            <Rectangle Grid.Row="6" Grid.Column="4" Fill="#FF10CFEE" />
+            <Rectangle Grid.Row="6" Grid.Column="6" Fill="#FF10CFEE" />
 
-			<Rectangle Grid.Row="6" Grid.Column="1" Fill="#FF7AF78B" />
-			<Rectangle Grid.Row="6" Grid.Column="3" Fill="#FF7AF78B" />
-			<Rectangle Grid.Row="6" Grid.Column="5" Fill="#FF7AF78B" />
-			<Rectangle Grid.Row="6" Grid.Column="7" Fill="#FF7AF78B" />
+            <Rectangle Grid.Row="6" Grid.Column="1" Fill="#FF7AF78B" />
+            <Rectangle Grid.Row="6" Grid.Column="3" Fill="#FF7AF78B" />
+            <Rectangle Grid.Row="6" Grid.Column="5" Fill="#FF7AF78B" />
+            <Rectangle Grid.Row="6" Grid.Column="7" Fill="#FF7AF78B" />
 
-			<Rectangle Grid.Row="7" Grid.Column="0" Fill="#FF7AF78B" />
+            <Rectangle Grid.Row="7" Grid.Column="0" Fill="#FF7AF78B" />
             <Rectangle Grid.Row="7" Grid.Column="2" Fill="#FF7AF78B" />
-			<Rectangle Grid.Row="7" Grid.Column="4" Fill="#FF7AF78B" />
-			<Rectangle Grid.Row="7" Grid.Column="6" Fill="#FF7AF78B" />
+            <Rectangle Grid.Row="7" Grid.Column="4" Fill="#FF7AF78B" />
+            <Rectangle Grid.Row="7" Grid.Column="6" Fill="#FF7AF78B" />
 
-			<Rectangle Grid.Row="7" Grid.Column="1" Fill="#FF10CFEE" />
-			<Rectangle Grid.Row="7" Grid.Column="3" Fill="#FF10CFEE" />
-			<Rectangle Grid.Row="7" Grid.Column="5" Fill="#FF10CFEE" />
-			<Rectangle Grid.Row="7" Grid.Column="7" Fill="#FF10CFEE" />
+            <Rectangle Grid.Row="7" Grid.Column="1" Fill="#FF10CFEE" />
+            <Rectangle Grid.Row="7" Grid.Column="3" Fill="#FF10CFEE" />
+            <Rectangle Grid.Row="7" Grid.Column="5" Fill="#FF10CFEE" />
+            <Rectangle Grid.Row="7" Grid.Column="7" Fill="#FF10CFEE" />
 
 
             <!--Piezas Negras-->
@@ -175,7 +175,7 @@
             <Image x:Name="Caballo3" Grid.Column="5" Margin="5" Grid.Row="7" Source="/Vista/Imagen/white_caballo.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             <Image x:Name="Alfil3" Grid.Column="6" Margin="5" Grid.Row="7" Source="/Vista/Imagen/white_bishop.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             <Image x:Name="Torre3" Margin="5" Grid.Row="7" Source="/Vista/Imagen/white_rook.png" Stretch="Fill" Grid.Column="7" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        		
-		</Grid>
-	</Grid>
+
+        </Grid>
+    </Grid>
 </phone:PhoneApplicationPage>
