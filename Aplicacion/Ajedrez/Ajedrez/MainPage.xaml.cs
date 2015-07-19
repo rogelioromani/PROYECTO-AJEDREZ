@@ -23,6 +23,23 @@ namespace Ajedrez
             // Código de ejemplo para traducir ApplicationBar
             //BuildLocalizedApplicationBar();  
         }
+
+        private void ayuda_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        private void partida_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/Vista/VistaTablero.xaml", UriKind.Relative));
+        }
+
+        private void salir_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        
         // Código de ejemplo para compilar una ApplicationBar traducida
         //private void BuildLocalizedApplicationBar()
         //{
@@ -38,6 +55,6 @@ namespace Ajedrez
         //    ApplicationBarMenuItem appBarMenuItem = new ApplicationBarMenuItem(AppResources.AppBarMenuItemText);
         //    ApplicationBar.MenuItems.Add(appBarMenuItem);
         //}
-
+            
     }
 }
