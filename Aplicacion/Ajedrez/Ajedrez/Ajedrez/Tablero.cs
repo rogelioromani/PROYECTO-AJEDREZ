@@ -70,9 +70,9 @@ namespace Ajedrez.Ajedrez
         return esposible;
     }
    
-    public ArrayList<Movimiento> getMovimientosPosibles(Pieza pieza)
+    public ArraySegment<Movimiento> getMovimientosPosibles(Pieza pieza)
     {
-        ArrayList<Movimiento> resultado=new ArrayList<>();
+        ArraySegment<Movimiento> resultado=new ArraySegment<>();
         resultado.clear();
        
         if (pieza.tipoPieza().equals("Peon")){
@@ -198,9 +198,9 @@ namespace Ajedrez.Ajedrez
         estado.remove(anterior.toString());
     }
    
-    public ArrayList<Movimiento> getMovimientosPosiblesBlancas()
+    public ArraySegment<Movimiento> getMovimientosPosiblesBlancas()
     {
-        ArrayList<Movimiento> resultado = new ArrayList<>();
+        ArraySegment<Movimiento> resultado = new ArraySegment<>();
        
         Pieza p;
         for (int i=0; i<7 ;i++)
@@ -220,9 +220,9 @@ namespace Ajedrez.Ajedrez
         return resultado;
     }
    
-    public ArrayList<Movimiento> getMovimientosPosiblesNegras()
+    public ArraySegment<Movimiento> getMovimientosPosiblesNegras()
     {
-        ArrayList<Movimiento> resultado = new ArrayList<>();
+        ArraySegment<Movimiento> resultado = new ArraySegment<>();
        
         Pieza p;
         for (int i=0; i<7 ;i++)
@@ -245,7 +245,7 @@ namespace Ajedrez.Ajedrez
     public boolean comprobarJaque(Pieza pieza)
     {
         boolean jaque = false;
-        ArrayList<Movimiento> mov=new ArrayList<>();
+        ArraySegment<Movimiento> mov=new ArraySegment<>();
        
         // Miro para cada pieza si 
         if (pieza.tipoPieza().equals("Torre"))
@@ -345,11 +345,11 @@ namespace Ajedrez.Ajedrez
         return jaque;
     }
    
-    public boolean comprobarJaqueMate(Pieza pieza_en_jaque, Pieza pieza_amenaza)
+    public Boolean comprobarJaqueMate(Pieza pieza_en_jaque, Pieza pieza_amenaza)
     {
-        ArrayList<Movimiento> resultado = new ArrayList<>();
-        ArrayList<Movimiento> movRey = new ArrayList<>();
-        ArrayList<Movimiento> comprobacion = new ArrayList<>();
+        ArraySegment<Movimiento> resultado = new ArraySegment<>();
+        ArraySegment<Movimiento> movRey = new ArraySegment<>();
+        ArraySegment<Movimiento> comprobacion = new ArraySegment<>();
         
         if (pieza_en_jaque.color == Color.negra)
         {
@@ -374,8 +374,8 @@ namespace Ajedrez.Ajedrez
         
         int i = 0;
         int j = 0;
-        boolean jaqueMate = false;
-        boolean jaqueMateInt;
+        Boolean jaqueMate = false;
+        Boolean jaqueMateInt;
        
         while(i<movRey.size())
         {
@@ -461,9 +461,9 @@ namespace Ajedrez.Ajedrez
         return jaqueMate;
     }
    
-    public ArrayList<Movimiento> getMovimientosPeon(Pieza pieza)
+    public ArraySegment<Movimiento> getMovimientosPeon(Pieza pieza)
     {
-         ArrayList<Movimiento> resultado=new ArrayList<>();
+         ArraySegment<Movimiento> resultado=new ArraySegment<>();
          resultado.clear();
          if (pieza.tipoPieza().equals("Peon")){
             // Hay que comprobar las 1 casilla
@@ -522,9 +522,9 @@ namespace Ajedrez.Ajedrez
         return resultado;
     }
       
-    public ArrayList<Movimiento> getMovimientosTorre(Pieza pieza)
+    public ArraySegment<Movimiento> getMovimientosTorre(Pieza pieza)
     {
-        ArrayList<Movimiento> resultado=new ArrayList<>();
+        ArraySegment<Movimiento> resultado=new ArraySegment<>();
         resultado.clear();
         if (pieza.tipoPieza().equals("Torre"))
         {
@@ -618,13 +618,13 @@ namespace Ajedrez.Ajedrez
         return resultado;
     }
    
-    public ArrayList<Movimiento> getMovimientosCaballo(Pieza pieza)
+    public ArraySegment<Movimiento> getMovimientosCaballo(Pieza pieza)
     {
-        ArrayList<Movimiento> resultado=new ArrayList<>();
+        ArraySegment<Movimiento> resultado=new ArraySegment<>();
         resultado.clear();
        if (pieza.tipoPieza().equals("Caballo"))
         {
-            boolean ficha = false;
+            Boolean ficha = false;
             int f_aux = pieza.posicion.getFila();
             int c_aux = pieza.posicion.getColumna(); //Obtenemos la posición dentro del array
             if ((f_aux - 1 >= 0)&&(c_aux + 2 <= 7))
@@ -753,13 +753,13 @@ namespace Ajedrez.Ajedrez
        return resultado;
     }
    
-    public ArrayList<Movimiento> getMovimientosReyna(Pieza pieza)
+    public ArraySegment<Movimiento> getMovimientosReyna(Pieza pieza)
     {
-        ArrayList<Movimiento> resultado=new ArrayList<>();
+        ArraySegment<Movimiento> resultado=new ArraySegment<>();
         resultado.clear();
         if (pieza.tipoPieza().equals("Reyna"))
         {
-            boolean ficha = false;
+            Boolean ficha = false;
             int f_aux = pieza.posicion.getFila();
             int c_aux = pieza.posicion.getColumna();      
                 while ((f_aux >= 0) && (c_aux <= 7) && !ficha) {
@@ -943,9 +943,9 @@ namespace Ajedrez.Ajedrez
         return resultado;
     }
   
-     public ArrayList<Movimiento> getMovimientosRey(Pieza pieza)
+     public ArraySegment<Movimiento> getMovimientosRey(Pieza pieza)
     {
-        ArrayList<Movimiento> resultado=new ArrayList<>();
+        ArraySegment<Movimiento> resultado=new ArraySegment<>();
         resultado.clear();
        
         if (pieza.tipoPieza().equals("Rey"))
@@ -1313,13 +1313,13 @@ namespace Ajedrez.Ajedrez
         }
         return resultado;
     }
-    public ArrayList<Movimiento> getMovimientosAlfil(Pieza pieza)
+    public ArraySegment<Movimiento> getMovimientosAlfil(Pieza pieza)
     {
-        ArrayList<Movimiento> resultado=new ArrayList<>();
+        ArraySegment<Movimiento> resultado=new ArraySegment<>();
         resultado.clear();
             if (pieza.tipoPieza().equals("Alfil"))
         {
-            boolean ficha = false;
+            Boolean ficha = false;
                 int f_aux = pieza.posicion.getFila();
                 int c_aux = pieza.posicion.getColumna();      
                 while ((f_aux >= 0) && (c_aux <= 7) && !ficha) {
