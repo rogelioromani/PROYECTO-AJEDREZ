@@ -17,7 +17,7 @@ namespace Ajedrez.Piezas
     char[] filas = {'0','1','2','3','4','5','6','7','8'};
     char[] columnas = {'a','b','c','d','e','f','g','h'};
     Posicion[] result = new Posicion[64];
-    ArrayList<Posicion> resultado = new ArrayList<>();
+    ArraySegment<Posicion> resultado = new ArraySegment<>();
     Color col;
     /**
      *
@@ -92,7 +92,7 @@ namespace Ajedrez.Piezas
             c_aux = c_aux + 1;
             resultado.add(new Posicion(f_aux, c_aux));
         }
-        
+       
         f_aux = posicion.getFila();
         c_aux = posicion.getColumna(); //Obtenemos la posición dentro del array
         // Sexta posiciones posibles
@@ -130,15 +130,15 @@ namespace Ajedrez.Piezas
         //Aquí la idea es en primer lugar mirar en el array que nos ha devuelto 
         //el método anterior si nuevoDestino está dentro de el y por tanto
         //sería candidato a moverse si no hay otra ficha o alguna por medio
-        System.Windows.MessageBox.Show("resultado0= "+resultado.toString());
+        System.Windows.MessageBox.Show("resultado0= "+resultado.ToString());
         Movimientos movimientos = this.getMovimientosPosibles();
-        ArrayList<Posicion> arrayLista = new ArrayList<>();
+        ArraySegment<Posicion> arrayLista = new ArraySegment<>();
         Boolean esposible = false;
         System.Windows.MessageBox.Show("nuevoDestino.fila= "+nuevoDestino.fila);
         System.Windows.MessageBox.Show("nuevoDestino.columna= "+nuevoDestino.columna);
-        System.Windows.MessageBox.Show("resultado= "+resultado.toString());
+        System.Windows.MessageBox.Show("resultado= "+resultado.ToString());
         System.Windows.MessageBox.Show("nuevoDestino= "+nuevoDestino);
-
+        
         Iterator<Posicion> iterador = resultado.iterator();
         while (iterador.hasNext()){
             Posicion pal = iterador.next();
