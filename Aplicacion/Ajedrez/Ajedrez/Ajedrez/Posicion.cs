@@ -45,7 +45,7 @@ namespace Ajedrez.Ajedrez
         {
             char[] c = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h' };
             char[] f = { '8', '7', '6', '5', '4', '3', '2', '1' };
-            String s = new StringBuilder().append(c[columna]).append(f[fila]).toString();
+            String s = new StringBuilder().Append(c[columna]).Append(f[fila]).ToString();
             return s;
         }
 

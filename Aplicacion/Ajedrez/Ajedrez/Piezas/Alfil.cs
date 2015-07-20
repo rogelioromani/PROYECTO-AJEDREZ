@@ -16,7 +16,7 @@ namespace Ajedrez
     char[] filas = {'0', '1', '2', '3', '4', '5', '6', '7'};
     char[] columnas = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'};
     Posicion[] result = new Posicion[64];
-    ArrayList<Posicion> resultado = new ArrayList<>();
+    ArraySegment<Posicion> resultado = new ArraySegment<>();
     Color col;
 
 
@@ -35,7 +35,8 @@ namespace Ajedrez
              System.Windows.MessageBox.Show(palabra + " ");
         }
          System.Windows.MessageBox.Show("");
-        resultado.clear();
+        resultado.Clear();
+       
     }
 
     public Posicion[] getResult() {

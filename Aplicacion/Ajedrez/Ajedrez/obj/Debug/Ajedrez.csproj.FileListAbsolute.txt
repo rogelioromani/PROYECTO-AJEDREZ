@@ -40,3 +40,4 @@ C:\Users\rogelio\Desktop\PROYECTO-AJEDREZ\Aplicacion\Ajedrez\Ajedrez\Bin\Debug\k
 C:\Users\rogelio\Desktop\PROYECTO-AJEDREZ\Aplicacion\Ajedrez\Ajedrez\Bin\Debug\ru\System.Windows.Interactivity.resources.dll
 C:\Users\rogelio\Desktop\PROYECTO-AJEDREZ\Aplicacion\Ajedrez\Ajedrez\Bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
 C:\Users\rogelio\Desktop\PROYECTO-AJEDREZ\Aplicacion\Ajedrez\Ajedrez\Bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
+C:\Users\rogelio\Desktop\PROYECTO-AJEDREZ\Aplicacion\Ajedrez\Ajedrez\obj\Debug\Vista\VistaTablero.g.cs

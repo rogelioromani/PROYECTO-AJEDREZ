@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace Ajedrez.Ajedrez
 {
    public class Maquina
@@ -19,7 +20,7 @@ namespace Ajedrez.Ajedrez
         Random rd = new Random();
         Posicion pos = new Posicion(1,1);
         Movimiento movimiento = new Movimiento();
-        ArrayList<Movimiento> resultado=new ArrayList<>();
+        ArraySegment<Movimiento> resultado=new ArraySegment<>();
         Boolean encontrado = false;
         
         /*1. - Vamos a buscar la primera ficha que encontremos
@@ -41,11 +42,11 @@ namespace Ajedrez.Ajedrez
                      */
                     //resultado será un arraylist con los posibles movimientos
                     //de la ficha seleccionada
-                    List<Pieza> valuesList = new ArrayList<Pieza>(tab.piezas_negras.values());
+                    List<Pieza> valuesList = new ArraySegment<Pieza>(tab.piezas_negras.values());
                     int randomIndex = new Random().nextInt(valuesList.size());
-                    Pieza randomValue = valuesList.get(randomIndex);
+                    Pieza randomValue = valuesList.Get(randomIndex);
                     resultado = tab.getMovimientosPosibles(randomValue);
-                    if (randomValue.tipoPieza().equals("Torre"))
+                    if (randomValue.tipoPieza().Equals("Torre"))
                         System.Windows.MessageBox.Show("Movimientos torre: "+resultado);
                     //ahora entre esos movimientos posibles, vamos a seleccionar uno
                     
@@ -53,10 +54,10 @@ namespace Ajedrez.Ajedrez
                     {
                         Iterator<Movimiento> iterador = resultado.iterator();
                         Movimiento m = null;
-                        System.Windows.MessageBox.Show("size= " + resultado.size());
+                        System.Windows.MessageBox.Show("size= " + resultado.Size());
                         int aleatorio;
                         if (resultado.size()>0)
-                            aleatorio = rd.nextInt(resultado.size())+1;
+                            aleatorio = rd.Nextint(resultado.size())+1;
                         else
                             aleatorio = 0;
                         System.Windows.MessageBox.Show("aleatorio= " + aleatorio);
@@ -75,6 +76,6 @@ namespace Ajedrez.Ajedrez
                     }               
              return movimiento;
             }
-
+       
       }
 }
