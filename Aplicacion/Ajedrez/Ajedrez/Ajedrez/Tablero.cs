@@ -245,7 +245,11 @@ namespace Ajedrez.Ajedrez
    
     public Boolean comprobarJaque(Pieza pieza)
     {
+<<<<<<< HEAD
         Boolean jaque = false;
+=======
+        boolean jaque = false;
+>>>>>>> faf/master
         ArraySegment<Movimiento> mov=new ArraySegment<>();
        
         // Miro para cada pieza si 

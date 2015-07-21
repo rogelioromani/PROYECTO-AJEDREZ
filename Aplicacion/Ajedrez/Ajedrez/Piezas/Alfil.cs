@@ -35,8 +35,13 @@ namespace Ajedrez
              System.Windows.MessageBox.Show(palabra + " ");
         }
          System.Windows.MessageBox.Show("");
+<<<<<<< HEAD
         resultado.Clear ();
        
+=======
+        resultado.Clear();
+   
+>>>>>>> faf/master
     }
 
     public Posicion[] getResult() {
