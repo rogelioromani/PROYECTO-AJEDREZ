@@ -35,7 +35,7 @@ namespace Ajedrez
              System.Windows.MessageBox.Show(palabra + " ");
         }
          System.Windows.MessageBox.Show("");
-        resultado.Clear();
+        resultado.Clear ();
        
     }
 
