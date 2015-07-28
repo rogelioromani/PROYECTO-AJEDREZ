@@ -28,7 +28,7 @@ namespace Ajedrez.Piezas
         super(pos,c);
         this.fila_actual = pos.getFila();
         this.columna_actual = pos.getColumna();
-        this.color = c; 
+        this.Color = c; 
     }
     
     public void MostrarTodas()
@@ -47,8 +47,8 @@ namespace Ajedrez.Piezas
         //Al ser una reyna tenemos 8 posibles caminos que comprobar (las 4 esquinas y  los 4 horizaontales y verticales)
 
         //Esquina superior derecha
-        int f_aux = posicion.getFila();
-        int c_aux = posicion.getColumna(); //Obtenemos la posición dentro del array
+        int f_aux = Posicion.getFila();
+        int c_aux = Posicion.getColumna(); //Obtenemos la posición dentro del array
         System.Windows.MessageBox.Show("Columnas " + columnas.Length);
         System.Windows.MessageBox.Show("Filas " + columnas.Length);
         while ((f_aux > 0) && (c_aux < columnas.Length-1)) {
@@ -58,24 +58,24 @@ namespace Ajedrez.Piezas
         }
         //Esquina inferior derecha
         //Partimos del punto inicial para volver a mirar
-        f_aux = posicion.getFila();
-        c_aux = posicion.getColumna();
+        f_aux = Posicion.getFila();
+        c_aux = Posicion.getColumna();
         System.Windows.MessageBox.Show("mala: " + "f_aux= "+ f_aux + "c_aux= " + c_aux);
         while ((f_aux < filas.Length-2) && (c_aux < columnas.Length-1)) {
             f_aux++;
             c_aux++;
             resultado.add(new Posicion(f_aux, c_aux));
         }
-        f_aux = posicion.getFila();
-        c_aux = posicion.getColumna(); //Obtenemos la posición dentro del array
+        f_aux = Posicion.getFila();
+        c_aux = Posicion.getColumna(); //Obtenemos la posición dentro del array
         while((f_aux < filas.Length-2) && (c_aux > 0)){
             //Esquina superior izquierda
             f_aux++;
             c_aux--;
             resultado.add(new Posicion(f_aux, c_aux));
         }
-        f_aux = posicion.getFila();
-        c_aux = posicion.getColumna(); //Obtenemos la posición dentro del array
+        f_aux = Posicion.getFila();
+        c_aux = Posicion.getColumna(); //Obtenemos la posición dentro del array
         while((f_aux > 0) && (c_aux > 0)){
             //Esquina inferior izquierda
             f_aux--;
@@ -83,31 +83,31 @@ namespace Ajedrez.Piezas
             resultado.add(new Posicion(f_aux, c_aux));
         }
         
-        f_aux = posicion.getFila();
-        c_aux = posicion.getColumna(); //Obtenemos la posición dentro del array
+        f_aux = Posicion.getFila();
+        c_aux = Posicion.getColumna(); //Obtenemos la posición dentro del array
         while(f_aux > 0){
             //Hacia atras
             f_aux--;
             resultado.add(new Posicion(f_aux, c_aux));
         }
         
-        f_aux = posicion.getFila();
-        c_aux = posicion.getColumna(); //Obtenemos la posición dentro del array
+        f_aux = Posicion.getFila();
+        c_aux = Posicion.getColumna(); //Obtenemos la posición dentro del array
         while(f_aux < filas.Length-2){
             //Hacia delante
             f_aux++;
             resultado.add(new Posicion(f_aux, c_aux));
         }
-        f_aux = posicion.getFila();
-        c_aux = posicion.getColumna(); //Obtenemos la posición dentro del array
+        f_aux = Posicion.getFila();
+        c_aux = Posicion.getColumna(); //Obtenemos la posición dentro del array
         while(c_aux > 0){
             // Hacia izquiera
             c_aux--;
             resultado.add(new Posicion(f_aux, c_aux));
         }
 
-        f_aux = posicion.getFila();
-        c_aux = posicion.getColumna(); //Obtenemos la posición dentro del array
+        f_aux = Posicion.getFila();
+        c_aux = Posicion.getColumna(); //Obtenemos la posición dentro del array
         while(c_aux < columnas.Length -2){
             // Hacia derecha
             c_aux++;
@@ -147,7 +147,7 @@ namespace Ajedrez.Piezas
     }
    
     public String toString(){
-        return "Reyna "+color.name();
+        return "Reyna "+Color.name();
     }
     }
 }

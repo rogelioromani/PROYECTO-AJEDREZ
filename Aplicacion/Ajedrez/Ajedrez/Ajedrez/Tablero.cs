@@ -11,16 +11,17 @@ namespace Ajedrez.Ajedrez
     {
     private Pieza pieza;
     
-    private final Posicion posicion = new Posicion(0,0);
-    private final Peon[] peon = new Peon[16];
-    private final Alfil[] alfil = new Alfil[4];
-    private final Torre[] torre = new Torre[4];
-    private final Caballo[] caballo = new Caballo[4];
-    private final Rey[] rey = new Rey[2];
-    private final Reyna[] reyna = new Reyna[2];
-    public final HashMap<String, Pieza> estado = new HashMap<>();
-    public final HashMap<String, Pieza> piezas_negras = new HashMap<>();
-    public final HashMap<String, Pieza> piezas_blancas = new HashMap<>();
+    private  Posicion posicion = new Posicion(0,0);
+    private  Peon[] peon = new Peon[16];
+    private  Alfil[] alfil = new Alfil[4];
+    private  Torre[] torre = new Torre[4];
+    private  Caballo[] caballo = new Caballo[4];
+    private  Rey[] rey = new Rey[2];
+    private  Reyna[] reyna = new Reyna[2];
+    
+    public  HashMap<String, Pieza> estado = new HashMap<>();
+    public  HashMap<String, Pieza> piezas_negras = new HashMap<>();
+    public  HashMap<String, Pieza> piezas_blancas = new HashMap<>();
 
 
     public Tablero()
@@ -48,11 +49,11 @@ namespace Ajedrez.Ajedrez
         torre[2] = new Torre(new Posicion(7,0), Ajedrez.Color.blanca);
         torre[3] = new Torre(new Posicion(7,7), Ajedrez.Color.blanca);
        
-        // Declaramos las reynas
+        // Declaramos las reyes
         rey[0] = new Rey(new Posicion(0,4), Ajedrez.Color.negra);
         rey[1] = new Rey(new Posicion(7,4), Ajedrez.Color.blanca);
        
-        // Declaramos los reyes
+        // Declaramos los reynas
         reyna[0] = new Reyna(new Posicion(0,3), Ajedrez.Color.negra);
         reyna[1] = new Reyna(new Posicion(7,3), Ajedrez.Color.blanca);
     }
@@ -61,10 +62,11 @@ namespace Ajedrez.Ajedrez
     public Boolean esMovimientoPosible(Movimiento mov, Pieza pieza)
     {
         Boolean esposible=false;
+       
         Iterator<Movimiento> iterador = this.getMovimientosPosibles(pieza).iterator();
         while (iterador.hasNext()){
             Movimiento m = iterador.next();
-            if (m.posDestino.fila==mov.posDestino.fila && m.posDestino.columna==mov.posDestino.columna){
+            if (m.PosDestino.fila==mov.PosDestino.fila && m.PosDestino.columna==mov.PosDestino.columna){
                 esposible=true;
             }
         }
@@ -74,6 +76,7 @@ namespace Ajedrez.Ajedrez
     public ArraySegment<Movimiento> getMovimientosPosibles(Pieza pieza)
     {
         ArraySegment<Movimiento> resultado=new ArraySegment<>();
+        
         resultado.clear();
        
         if (pieza.tipoPieza().Equals("Peon")){
@@ -169,7 +172,7 @@ namespace Ajedrez.Ajedrez
         piezas_blancas.put((new Posicion(7,3)).ToString(), reyna[1]);
     }
    
-    public boolean jugadorHaceJaqueMate(Jugador jug)
+    public Boolean jugadorHaceJaqueMate(Jugador jug)
     {
         return true;
     }
@@ -211,11 +214,11 @@ namespace Ajedrez.Ajedrez
                 if (hayPieza((new Posicion(i,j))))
                 {
                     p = this.estado.get(new Posicion(i,j).ToString());
-                    if(p.color == Color.blanca)
+                    if(p.Color == Color.blanca)
                     {
-                        resultado.addAll(getMovimientosPosibles(p));
+                        resultado.Addall(getMovimientosPosibles(p));
                     }
-                }
+                 }
             }
         }
         return resultado;
@@ -233,7 +236,7 @@ namespace Ajedrez.Ajedrez
                 if (hayPieza((new Posicion(i,j))))
                 {
                     p = this.estado.get(new Posicion(i,j).ToString());
-                    if(p.color == Color.blanca)
+                    if(p.Color == Color.blanca)
                     {
                         resultado.addAll(getMovimientosPosibles(p));
                     }
@@ -245,11 +248,9 @@ namespace Ajedrez.Ajedrez
    
     public Boolean comprobarJaque(Pieza pieza)
     {
-<<<<<<< HEAD
+
         Boolean jaque = false;
-=======
-        boolean jaque = false;
->>>>>>> faf/master
+        
         ArraySegment<Movimiento> mov=new ArraySegment<>();
        
         // Miro para cada pieza si 
@@ -261,7 +262,7 @@ namespace Ajedrez.Ajedrez
             {
                 if (hayPieza(mov.get(i).posDestino))
                 {
-                    if ( (pieza.color != this.estado.get(mov.get(i).posDestino.ToString()).color) && ( this.estado.get(mov.Get(i).posDestino.ToString()).tipoPieza().ToString().Equals("Rey") ) )
+                    if ( (pieza.Color != this.estado.get(mov.get(i).posDestino.ToString()).color) && ( this.estado.get(mov.Get(i).posDestino.ToString()).tipoPieza().ToString().Equals("Rey") ) )
                     {
                         jaque = true;
                         // le paso como argumento el rey que esta en jaque
@@ -280,7 +281,7 @@ namespace Ajedrez.Ajedrez
             {
                 if (hayPieza(mov.get(i).posDestino))
                 {
-                    if ( (pieza.color != this.estado.get(mov.get(i).posDestino.ToString()).color) && ( this.estado.get(mov.get(i).posDestino.ToString()).tipoPieza().ToString().Equals("Rey") ) )
+                    if ( (pieza.Color != this.estado.get(mov.get(i).posDestino.ToString()).color) && ( this.estado.get(mov.get(i).posDestino.ToString()).tipoPieza().ToString().Equals("Rey") ) )
                     {
                         jaque = true;
                         // le paso como argumento el rey que esta en jaque
@@ -298,7 +299,7 @@ namespace Ajedrez.Ajedrez
             {
                 if (hayPieza(mov.get(i).posDestino))
                 {
-                    if ( (pieza.color != this.estado.get(mov.get(i).posDestino.ToString()).color) && ( this.estado.get(mov.get(i).posDestino.ToString()).tipoPieza().ToString().Equals("Rey") ) )
+                    if ( (pieza.Color != this.estado.get(mov.get(i).posDestino.ToString()).color) && ( this.estado.get(mov.get(i).posDestino.ToString()).tipoPieza().ToString().Equals("Rey") ) )
                     {
                         jaque = true;
                         // le paso como argumento el rey que esta en jaque
@@ -317,7 +318,7 @@ namespace Ajedrez.Ajedrez
             {
                 if (hayPieza(mov.get(i).posDestino))
                 {
-                    if ( (pieza.color != this.estado.get(mov.get(i).posDestino.ToString()).color) && ( this.estado.get(mov.get(i).posDestino.ToString()).tipoPieza().ToString().Equals("Rey") ) )
+                    if ( (pieza.Color != this.estado.get(mov.get(i).posDestino.ToString()).color) && ( this.estado.get(mov.get(i).posDestino.ToString()).tipoPieza().ToString().Equals("Rey") ) )
                     {
                         jaque = true;
                         // le paso como argumento el rey que esta en jaque
@@ -334,9 +335,9 @@ namespace Ajedrez.Ajedrez
            
             for (int i=0; i<mov.size(); i++)
             {
-                if (hayPieza(mov.get(i).posDestino))
+                if (hayPieza(mov.Get(i).posDestino))
                 {
-                    if ( (pieza.color != this.estado.get(mov.get(i).posDestino.ToString()).color) && ( this.estado.get(mov.get(i).posDestino.ToString()).tipoPieza().ToString().Equals("Rey") ) )
+                    if ( (pieza.Color != this.estado.get(mov.get(i).posDestino.ToString()).color) && ( this.estado.get(mov.get(i).posDestino.ToString()).tipoPieza().ToString().Equals("Rey") ) )
                     {
                         jaque = true;
                         // le paso como argumento el rey que esta en jaque
@@ -356,7 +357,7 @@ namespace Ajedrez.Ajedrez
         ArraySegment<Movimiento> movRey = new ArraySegment<>();
         ArraySegment<Movimiento> comprobacion = new ArraySegment<>();
         
-        if (pieza_en_jaque.color == Color.negra)
+        if (pieza_en_jaque.Color == Color.negra)
         {
             resultado = getMovimientosPosiblesBlancas();
             comprobacion = getMovimientosPosiblesNegras();
@@ -367,8 +368,8 @@ namespace Ajedrez.Ajedrez
             comprobacion = getMovimientosPosiblesBlancas();
         }
         // La posicion del rey amenazado se detecta bien
-        int fila_aux = pieza_en_jaque.posicion.getFila();
-        int col_aux = pieza_en_jaque.posicion.getColumna();
+        int fila_aux = pieza_en_jaque.Posicion.getFila();
+        int col_aux = pieza_en_jaque.Posicion.getColumna();
 //        System.out.println("fila " + fila_aux);
 //        System.out.println("columna " + col_aux);
 //        System.out.println(resultado);
@@ -412,7 +413,7 @@ namespace Ajedrez.Ajedrez
             i=0;
             while(i<comprobacion.size() && jaqueMate)
             {
-                if (pieza_amenaza.posicion.ToString().Equals(comprobacion.get(i).posDestino.ToString()))
+                if (pieza_amenaza.Posicion.ToString().Equals(comprobacion.get(i).posDestino.ToString()))
                 {
                     jaqueMate = false;
                     //estado.get(anterior.ToString()).color == Ajedrez.Color.negra)
@@ -427,12 +428,12 @@ namespace Ajedrez.Ajedrez
             if (pieza_amenaza.tipoPieza().ToString().Equals("Torre"))
             {
                 // estan en la misma columna, hay que ver que pieza se puede interponer
-                if (pieza_amenaza.posicion.getColumna() == pieza_en_jaque.posicion.getColumna())
+                if (pieza_amenaza.Posicion.getColumna() == pieza_en_jaque.Posicion.getColumna())
                 {
-                    if (pieza_amenaza.posicion.getFila() > pieza_en_jaque.posicion.getFila())
+                    if (pieza_amenaza.Posicion.getFila() > pieza_en_jaque.Posicion.getFila())
                     {
-                        int f_aux = pieza_amenaza.posicion.getFila();
-                        while (f_aux > pieza_en_jaque.posicion.getFila())
+                        int f_aux = pieza_amenaza.Posicion.getFila();
+                        while (f_aux > pieza_en_jaque.Posicion.getFila())
                         {
                             f_aux--;
                             
@@ -445,7 +446,7 @@ namespace Ajedrez.Ajedrez
             if (pieza_amenaza.tipoPieza().ToString().Equals("Alfil"))
             {
                 // estan en la misma columna, hay que ver que pieza se puede interponer
-                if (pieza_amenaza.posicion.getColumna() == pieza_en_jaque.posicion.getColumna())
+                if (pieza_amenaza.Posicion.getColumna() == pieza_en_jaque.Posicion.getColumna())
                 {
                     //for 
                 }
@@ -454,7 +455,7 @@ namespace Ajedrez.Ajedrez
             if (pieza_amenaza.tipoPieza().ToString().Equals("Reyna"))
             {
                 // estan en la misma columna, hay que ver que pieza se puede interponer
-                if (pieza_amenaza.posicion.getColumna() == pieza_en_jaque.posicion.getColumna())
+                if (pieza_amenaza.Posicion.getColumna() == pieza_en_jaque.Posicion.getColumna())
                 {
                     //for 
                 }
@@ -474,53 +475,53 @@ namespace Ajedrez.Ajedrez
             // Hay que comprobar las 1 casilla
             //Color color = this.col;
            
-            int f_aux = pieza.posicion.getFila();
-            int c_aux = pieza.posicion.getColumna(); //Obtenemos la posición dentro del array
+            int f_aux = pieza.Posicion.getFila();
+            int c_aux = pieza.Posicion.getColumna(); //Obtenemos la posición dentro del array
             // Primera posicion posible
-            if((f_aux > 0)&& (pieza.color == Color.blanca))
+            if((f_aux > 0)&& (pieza.Color == Color.blanca))
             {
                 if (f_aux == 6){
                     if(!hayPieza(new Posicion(f_aux - 2, c_aux))){
-                        resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux - 2, c_aux)));
+                      resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux - 2, c_aux)));
                     }
                 }
                 f_aux=f_aux-1;
                 if(!hayPieza(new Posicion(f_aux, c_aux))){
-                    resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux, c_aux)));
+                    resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux, c_aux)));
                     if(c_aux<7 && c_aux>0){
-                        if(hayPieza(new Posicion(f_aux, c_aux+1)) && (pieza.color != this.estado.get(new Posicion(f_aux, c_aux+1).ToString()).color))
-                            resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux, c_aux+1)));
-                        if(hayPieza(new Posicion(f_aux, c_aux-1)) && (pieza.color != this.estado.get(new Posicion(f_aux, c_aux-1).ToString()).color))
-                            resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux, c_aux-1)));
+                        if(hayPieza(new Posicion(f_aux, c_aux+1)) && (pieza.Color != this.estado.get(new Posicion(f_aux, c_aux+1).ToString()).color))
+                            resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux, c_aux+1)));
+                        if(hayPieza(new Posicion(f_aux, c_aux-1)) && (pieza.Color != this.estado.get(new Posicion(f_aux, c_aux-1).ToString()).color))
+                            resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux, c_aux-1)));
                     }
                     else if(c_aux==7){                        
-                        resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux, c_aux-1)));
+                        resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux, c_aux-1)));
                     }
                     else if(c_aux==0){
-                        resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux, c_aux+1)));
+                        resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux, c_aux+1)));
                     }
                 }
             }
-            else if((f_aux < 7) && (pieza.color == Color.negra))
+            else if((f_aux < 7) && (pieza.Color == Color.negra))
             {
                 if (f_aux == 1){
                     if(!hayPieza(new Posicion(f_aux + 2, c_aux)))
-                        resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux + 2, c_aux)));
+                        resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux + 2, c_aux)));
                 }
                 f_aux = f_aux + 1;
                 if(!hayPieza(new Posicion(f_aux, c_aux)))
-                    resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux, c_aux)));
+                    resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux, c_aux)));
                 if(c_aux<7 && c_aux>0){
-                    if(hayPieza(new Posicion(f_aux, c_aux+1)) && (pieza.color != this.estado.get(new Posicion(f_aux, c_aux+1).ToString()).color))
-                        resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux, c_aux+1)));
-                    if(hayPieza(new Posicion(f_aux, c_aux-1)) && (pieza.color != this.estado.get(new Posicion(f_aux, c_aux-1).ToString()).color))
-                        resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux, c_aux-1)));
+                    if(hayPieza(new Posicion(f_aux, c_aux+1)) && (pieza.Color != this.estado.get(new Posicion(f_aux, c_aux+1).ToString()).color))
+                        resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux, c_aux+1)));
+                    if(hayPieza(new Posicion(f_aux, c_aux-1)) && (pieza.Color != this.estado.get(new Posicion(f_aux, c_aux-1).ToString()).color))
+                        resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux, c_aux-1)));
                 }
                 else if(c_aux==7){                        
-                    resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux, c_aux-1)));
+                    resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux, c_aux-1)));
                 }
                 else if(c_aux==0){
-                    resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux, c_aux+1)));
+                    resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux, c_aux+1)));
                 }
             }
         }
@@ -535,22 +536,22 @@ namespace Ajedrez.Ajedrez
         {
             // Hay que comprobar las 1 casilla
             //Color color = this.col;
-            int f_aux = pieza.posicion.getFila();
-            int c_aux = pieza.posicion.getColumna(); //Obtenemos la posición dentro del array
-            boolean ficha = false;
+            int f_aux = pieza.Posicion.getFila();
+            int c_aux = pieza.Posicion.getColumna(); //Obtenemos la posición dentro del array
+            Boolean ficha = false;
             // Primera posicion posible
             while((f_aux > 0) && !ficha){
                 //Hacia atras
                 f_aux--;
                     if(!hayPieza(new Posicion(f_aux, c_aux)))
                     {
-                        resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux, c_aux)));
+                        resultado.Add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux, c_aux)));
                        
                     }
                     else if(hayPieza(new Posicion(f_aux, c_aux)))
                     {
-                        if((pieza.color != this.estado.get(new Posicion(f_aux, c_aux).ToString()).color))
-                            resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux, c_aux)));
+                        if((pieza.Color != this.estado.get(new Posicion(f_aux, c_aux).ToString()).color))
+                            resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux, c_aux)));
                         ficha=true;
                     }
                     else
@@ -560,20 +561,20 @@ namespace Ajedrez.Ajedrez
             }
             ficha=false;
            
-            f_aux = pieza.posicion.getFila();
-            c_aux = pieza.posicion.getColumna();
+            f_aux = pieza.Posicion.getFila();
+            c_aux = pieza.Posicion.getColumna();
             while((f_aux < 7) && !ficha){
                
                 //Hacia delante
                 f_aux++;
                     if(!hayPieza(new Posicion(f_aux, c_aux)))
                     {
-                        resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux, c_aux)));
+                        resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux, c_aux)));
                     }                    
                     else if(hayPieza(new Posicion(f_aux, c_aux)))
                     {
-                        if((pieza.color != this.estado.get(new Posicion(f_aux, c_aux).ToString()).color))
-                            resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux, c_aux)));
+                        if((pieza.Color != this.estado.get(new Posicion(f_aux, c_aux).ToString()).color))
+                            resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux, c_aux)));
                         ficha=true;
                     }
                     else
@@ -582,17 +583,17 @@ namespace Ajedrez.Ajedrez
                     }
             }
             ficha=false;
-            f_aux = pieza.posicion.getFila();
-            c_aux = pieza.posicion.getColumna();
+            f_aux = pieza.Posicion.getFila();
+            c_aux = pieza.Posicion.getColumna();
             while((c_aux > 0) && !ficha){
                 // Hacia izquiera
                 c_aux--;
                 if(!hayPieza(new Posicion(f_aux, c_aux)))
-                    resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux, c_aux)));
+                    resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux, c_aux)));
                 else if(hayPieza(new Posicion(f_aux, c_aux)))
                     {
-                        if((pieza.color != this.estado.get(new Posicion(f_aux, c_aux).ToString()).color))
-                            resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux, c_aux)));
+                        if((pieza.Color != this.estado.get(new Posicion(f_aux, c_aux).ToString()).color))
+                            resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux, c_aux)));
                         ficha=true;
                     }
                 else
@@ -601,17 +602,17 @@ namespace Ajedrez.Ajedrez
                 }
             }
             ficha=false;
-            f_aux = pieza.posicion.getFila();
-            c_aux = pieza.posicion.getColumna();
+            f_aux = pieza.Posicion.getFila();
+            c_aux = pieza.Posicion.getColumna();
             while((c_aux < 7) && !ficha){
                 // Hacia derecha
                 c_aux++;
                 if(!hayPieza(new Posicion(f_aux, c_aux)))
-                    resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux, c_aux)));
+                    resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux, c_aux)));
                 else if(hayPieza(new Posicion(f_aux, c_aux)))
                     {
-                        if((pieza.color != this.estado.get(new Posicion(f_aux, c_aux).ToString()).color))
-                            resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux, c_aux)));
+                        if((pieza.Color != this.estado.get(new Posicion(f_aux, c_aux).ToString()).color))
+                            resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux, c_aux)));
                         ficha=true;
                     }
                 else
@@ -630,53 +631,53 @@ namespace Ajedrez.Ajedrez
        if (pieza.tipoPieza().Equals("Caballo"))
         {
             Boolean ficha = false;
-            int f_aux = pieza.posicion.getFila();
-            int c_aux = pieza.posicion.getColumna(); //Obtenemos la posición dentro del array
+            int f_aux = pieza.Posicion.getFila();
+            int c_aux = pieza.Posicion.getColumna(); //Obtenemos la posición dentro del array
             if ((f_aux - 1 >= 0)&&(c_aux + 2 <= 7))
             {
                 f_aux = f_aux - 1;
                 c_aux = c_aux + 2;
                     if(!hayPieza(new Posicion(f_aux, c_aux)))
-                        resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux, c_aux)));
+                        resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux, c_aux)));
                     else if(hayPieza(new Posicion(f_aux, c_aux)))
                     {
-                        if((pieza.color != this.estado.get(new Posicion(f_aux, c_aux).ToString()).color))
-                            resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux, c_aux)));
+                        if((pieza.Color != this.estado.get(new Posicion(f_aux, c_aux).ToString()).color))
+                            resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux, c_aux)));
                     }
             }
  
-            f_aux = pieza.posicion.getFila();
-            c_aux = pieza.posicion.getColumna(); //Obtenemos la posición dentro del array
+            f_aux = pieza.Posicion.getFila();
+            c_aux = pieza.Posicion.getColumna(); //Obtenemos la posición dentro del array
             // Segunda posiciones posibles
             if ((f_aux + 1 <= 7)&&(c_aux + 2 <= 7))
             {        
                 f_aux = f_aux + 1;
                 c_aux = c_aux + 2;
                     if(!hayPieza(new Posicion(f_aux, c_aux)))
-                        resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux, c_aux)));
+                        resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux, c_aux)));
                     else if(hayPieza(new Posicion(f_aux, c_aux)))
                     {
-                        if((pieza.color != this.estado.get(new Posicion(f_aux, c_aux).ToString()).color))
-                            resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux, c_aux)));
+                        if((pieza.Color != this.estado.get(new Posicion(f_aux, c_aux).ToString()).color))
+                            resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux, c_aux)));
                     }
             }
-            f_aux = pieza.posicion.getFila();
-            c_aux = pieza.posicion.getColumna(); //Obtenemos la posición dentro del array
+            f_aux = pieza.Posicion.getFila();
+            c_aux = pieza.Posicion.getColumna(); //Obtenemos la posición dentro del array
             // Tercera posiciones posibles
             if ((f_aux - 1 >= 0)&&(c_aux - 2 >= 0))
             {
                 f_aux = f_aux - 1;
                 c_aux = c_aux - 2;
                     if(!hayPieza(new Posicion(f_aux, c_aux)))
-                        resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux, c_aux)));
+                        resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux, c_aux)));
                     else if(hayPieza(new Posicion(f_aux, c_aux)))
                     {
-                        if((pieza.color != this.estado.get(new Posicion(f_aux, c_aux).ToString()).color))
-                            resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux, c_aux)));
+                        if((pieza.Color != this.estado.get(new Posicion(f_aux, c_aux).ToString()).color))
+                            resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux, c_aux)));
                     }
             }
-            f_aux = pieza.posicion.getFila();
-            c_aux = pieza.posicion.getColumna(); //Obtenemos la posición dentro del array
+            f_aux = pieza.Posicion.getFila();
+            c_aux = pieza.Posicion.getColumna(); //Obtenemos la posición dentro del array
        
             // Cuarta posicion posible
             if ((f_aux + 1 <= 7)&&(c_aux - 2 >= 0))
@@ -684,15 +685,15 @@ namespace Ajedrez.Ajedrez
                 f_aux = f_aux + 1;
                 c_aux = c_aux - 2;
                     if(!hayPieza(new Posicion(f_aux, c_aux)))
-                        resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux, c_aux)));
+                        resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux, c_aux)));
                     else if(hayPieza(new Posicion(f_aux, c_aux)))
                     {
-                        if((pieza.color != this.estado.get(new Posicion(f_aux, c_aux).ToString()).color))
-                            resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux, c_aux)));
+                        if((pieza.Color != this.estado.get(new Posicion(f_aux, c_aux).ToString()).color))
+                            resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux, c_aux)));
                     }
             }
-            f_aux = pieza.posicion.getFila();
-            c_aux = pieza.posicion.getColumna(); //Obtenemos la posición dentro del array
+            f_aux = pieza.Posicion.getFila();
+            c_aux = pieza.Posicion.getColumna(); //Obtenemos la posición dentro del array
            
             // Quinta posicion posible
             if ((f_aux + 2 <= 7)&&(c_aux + 1 <= 7))
@@ -700,58 +701,58 @@ namespace Ajedrez.Ajedrez
                 f_aux = f_aux + 2;
                 c_aux = c_aux + 1;
                     if(!hayPieza(new Posicion(f_aux, c_aux)))
-                        resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux, c_aux)));
+                        resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux, c_aux)));
                     else if(hayPieza(new Posicion(f_aux, c_aux)))
                     {
-                        if((pieza.color != this.estado.get(new Posicion(f_aux, c_aux).ToString()).color))
-                            resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux, c_aux)));
+                        if((pieza.Color != this.estado.get(new Posicion(f_aux, c_aux).ToString()).color))
+                            resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux, c_aux)));
                     }
             }
-            f_aux = pieza.posicion.getFila();
-            c_aux = pieza.posicion.getColumna(); //Obtenemos la posición dentro del array
+            f_aux = pieza.Posicion.getFila();
+            c_aux = pieza.Posicion.getColumna(); //Obtenemos la posición dentro del array
             // Sexta posiciones posibles
             if ((f_aux + 2 <= 7)&&(c_aux - 1 >= 0))
             {        
                 f_aux = f_aux + 2;
                 c_aux = c_aux - 1;
                     if(!hayPieza(new Posicion(f_aux, c_aux)))
-                        resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux, c_aux)));
+                        resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux, c_aux)));
                     else if(hayPieza(new Posicion(f_aux, c_aux)))
                     {
-                        if((pieza.color != this.estado.get(new Posicion(f_aux, c_aux).ToString()).color))
-                            resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux, c_aux)));
+                        if((pieza.Color != this.estado.get(new Posicion(f_aux, c_aux).ToString()).color))
+                            resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux, c_aux)));
                     }
             }
        
-            f_aux = pieza.posicion.getFila();
-            c_aux = pieza.posicion.getColumna(); //Obtenemos la posición dentro del array
+            f_aux = pieza.Posicion.getFila();
+            c_aux = pieza.Posicion.getColumna(); //Obtenemos la posición dentro del array
             // Septima posiciones posibles
             if ((f_aux - 2 >= 0)&&(c_aux + 1 <= 7))
             {        
                 f_aux = f_aux - 2;
                 c_aux = c_aux + 1;
                     if(!hayPieza(new Posicion(f_aux, c_aux)))
-                        resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux, c_aux)));
+                        resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux, c_aux)));
                     else if(hayPieza(new Posicion(f_aux, c_aux)))
                     {
-                        if((pieza.color != this.estado.get(new Posicion(f_aux, c_aux).ToString()).color))
-                            resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux, c_aux)));
+                        if((pieza.Color != this.estado.get(new Posicion(f_aux, c_aux).ToString()).color))
+                            resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux, c_aux)));
                     }
             }
        
-            f_aux = pieza.posicion.getFila();
-            c_aux = pieza.posicion.getColumna(); //Obtenemos la posición dentro del array
+            f_aux = pieza.Posicion.getFila();
+            c_aux = pieza.Posicion.getColumna(); //Obtenemos la posición dentro del array
             // Octava posiciones posibles
             if ((f_aux - 2 >= 0)&&(c_aux - 1 >= 0))
             {        
                 f_aux = f_aux - 2;
                 c_aux = c_aux - 1;
                     if(!hayPieza(new Posicion(f_aux, c_aux)))
-                        resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux, c_aux)));
+                        resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux, c_aux)));
                     else if(hayPieza(new Posicion(f_aux, c_aux)))
                     {
-                        if((pieza.color != this.estado.get(new Posicion(f_aux, c_aux).ToString()).color))
-                            resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux, c_aux)));
+                        if((pieza.Color != this.estado.get(new Posicion(f_aux, c_aux).ToString()).color))
+                            resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux, c_aux)));
                     }
             }
         }
@@ -765,19 +766,19 @@ namespace Ajedrez.Ajedrez
         if (pieza.tipoPieza().Equals("Reyna"))
         {
             Boolean ficha = false;
-            int f_aux = pieza.posicion.getFila();
-            int c_aux = pieza.posicion.getColumna();      
+            int f_aux = pieza.Posicion.getFila();
+            int c_aux = pieza.Posicion.getColumna();      
                 while ((f_aux >= 0) && (c_aux <= 7) && !ficha) {
                     f_aux--;
                     c_aux++;
                     if (( !(f_aux < 0) )  && ( !(c_aux >7) ))
                     {
                         if(!hayPieza(new Posicion(f_aux, c_aux)))
-                            resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux, c_aux)));
+                            resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux, c_aux)));
                         else if(hayPieza(new Posicion(f_aux, c_aux)))
                         {
-                            if((pieza.color != this.estado.get(new Posicion(f_aux, c_aux).ToString()).color))
-                                resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux, c_aux)));
+                            if((pieza.Color != this.estado.get(new Posicion(f_aux, c_aux).ToString()).color))
+                                resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux, c_aux)));
                             ficha=true;
                         }
                         else
@@ -789,19 +790,19 @@ namespace Ajedrez.Ajedrez
             //Esquina inferior derecha
             //Partimos del punto inicial para volver a mirar
             ficha = false;
-            f_aux = pieza.posicion.getFila();
-            c_aux = pieza.posicion.getColumna();
+            f_aux = pieza.Posicion.getFila();
+            c_aux = pieza.Posicion.getColumna();
             while ((f_aux <= 7) && (c_aux <= 7) && !ficha) {
                 f_aux++;
                 c_aux++;
                 if (( !(f_aux > 7) )  && ( !(c_aux > 7) ))
                 {
                     if(!hayPieza(new Posicion(f_aux, c_aux)))
-                        resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux, c_aux)));
+                        resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux, c_aux)));
                     else if(hayPieza(new Posicion(f_aux, c_aux)))
                     {
-                        if((pieza.color != this.estado.get(new Posicion(f_aux, c_aux).ToString()).color))
-                            resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux, c_aux)));
+                        if((pieza.Color != this.estado.get(new Posicion(f_aux, c_aux).ToString()).color))
+                            resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux, c_aux)));
                         ficha=true;
                     }
                     else
@@ -811,8 +812,8 @@ namespace Ajedrez.Ajedrez
                 }
             }
             ficha = false;
-            f_aux = pieza.posicion.getFila();
-            c_aux = pieza.posicion.getColumna();
+            f_aux = pieza.Posicion.getFila();
+            c_aux = pieza.Posicion.getColumna();
             while((f_aux <= 7) && (c_aux >= 0) && !ficha){
                 //Esquina superior izquierda
                 f_aux++;
@@ -820,11 +821,11 @@ namespace Ajedrez.Ajedrez
                 if (( !(f_aux > 7) )  && ( !(c_aux < 0) ))
                 {
                     if(!hayPieza(new Posicion(f_aux, c_aux)))
-                        resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux, c_aux)));
+                        resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux, c_aux)));
                     else if(hayPieza(new Posicion(f_aux, c_aux)))
                     {
-                        if((pieza.color != this.estado.get(new Posicion(f_aux, c_aux).ToString()).color))
-                            resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux, c_aux)));
+                        if((pieza.Color != this.estado.get(new Posicion(f_aux, c_aux).ToString()).color))
+                            resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux, c_aux)));
                         ficha=true;
                     }
                     else
@@ -834,8 +835,8 @@ namespace Ajedrez.Ajedrez
                 }
             }
             ficha = false;
-            f_aux = pieza.posicion.getFila();
-            c_aux = pieza.posicion.getColumna();
+            f_aux = pieza.Posicion.getFila();
+            c_aux = pieza.Posicion.getColumna();
             while((f_aux >= 0) && (c_aux >= 0) && !ficha){
                 //Esquina inferior izquierda
                 f_aux--;
@@ -843,11 +844,11 @@ namespace Ajedrez.Ajedrez
                 if (( !(f_aux < 0) )  && ( !(c_aux < 0) ))
                 {
                     if(!hayPieza(new Posicion(f_aux, c_aux)))
-                        resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux, c_aux)));
+                        resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux, c_aux)));
                     else if(hayPieza(new Posicion(f_aux, c_aux)))
                     {
-                        if((pieza.color != this.estado.get(new Posicion(f_aux, c_aux).ToString()).color))
-                            resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux, c_aux)));
+                        if((pieza.Color != this.estado.get(new Posicion(f_aux, c_aux).ToString()).color))
+                            resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux, c_aux)));
                         ficha=true;
                     }
                     else
@@ -857,19 +858,19 @@ namespace Ajedrez.Ajedrez
                 }
             }
             ficha = false;
-            f_aux = pieza.posicion.getFila();
-            c_aux = pieza.posicion.getColumna();
+            f_aux = pieza.Posicion.getFila();
+            c_aux = pieza.Posicion.getColumna();
             while(f_aux >= 0 && !ficha){
                 //Hacia atras
                 f_aux--;
                 if (!(f_aux<0))
                 {
                     if(!hayPieza(new Posicion(f_aux, c_aux)))
-                        resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux, c_aux)));
+                        resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux, c_aux)));
                     else if(hayPieza(new Posicion(f_aux, c_aux)))
                     {
-                        if((pieza.color != this.estado.get(new Posicion(f_aux, c_aux).ToString()).color))
-                            resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux, c_aux)));
+                        if((pieza.Color != this.estado.get(new Posicion(f_aux, c_aux).ToString()).color))
+                            resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux, c_aux)));
                         ficha=true;
                     }
                     else
@@ -879,19 +880,19 @@ namespace Ajedrez.Ajedrez
                 }
             }
         ficha = false;
-        f_aux = pieza.posicion.getFila();
-        c_aux = pieza.posicion.getColumna();
+        f_aux = pieza.Posicion.getFila();
+        c_aux = pieza.Posicion.getColumna();
         while(f_aux <= 7 && !ficha){
             //Hacia delante
             f_aux++;
                 if (!(f_aux>7))
                 {
                     if(!hayPieza(new Posicion(f_aux, c_aux)))
-                        resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux, c_aux)));
+                        resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux, c_aux)));
                     else if(hayPieza(new Posicion(f_aux, c_aux)))
                     {
-                        if((pieza.color != this.estado.get(new Posicion(f_aux, c_aux).ToString()).color))
-                            resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux, c_aux)));
+                        if((pieza.Color != this.estado.get(new Posicion(f_aux, c_aux).ToString()).color))
+                            resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux, c_aux)));
                         ficha=true;
                     }
                     else
@@ -901,19 +902,19 @@ namespace Ajedrez.Ajedrez
                 }
         }
         ficha = false;
-        f_aux = pieza.posicion.getFila();
-        c_aux = pieza.posicion.getColumna();
+        f_aux = pieza.Posicion.getFila();
+        c_aux = pieza.Posicion.getColumna();
         while(c_aux >= 0 && !ficha){
             // Hacia izquiera
             c_aux--;
                 if (!(c_aux<0))
                 {
                     if(!hayPieza(new Posicion(f_aux, c_aux)))
-                        resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux, c_aux)));
+                        resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux, c_aux)));
                     else if(hayPieza(new Posicion(f_aux, c_aux)))
                     {
-                        if((pieza.color != this.estado.get(new Posicion(f_aux, c_aux).ToString()).color))
-                            resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux, c_aux)));
+                        if((pieza.Color != this.estado.get(new Posicion(f_aux, c_aux).ToString()).color))
+                            resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux, c_aux)));
                         ficha=true;
                     }
                     else
@@ -923,19 +924,19 @@ namespace Ajedrez.Ajedrez
                 }
         }
         ficha = false;
-        f_aux = pieza.posicion.getFila();
-        c_aux = pieza.posicion.getColumna();
+        f_aux = pieza.Posicion.getFila();
+        c_aux = pieza.Posicion.getColumna();
         while(c_aux <= 7 && !ficha){
             // Hacia derecha
             c_aux++;
                 if (!(c_aux>7))
                 {
                     if(!hayPieza(new Posicion(f_aux, c_aux)))
-                        resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux, c_aux)));
+                        resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux, c_aux)));
                     else if(hayPieza(new Posicion(f_aux, c_aux)))
                     {
-                        if((pieza.color != this.estado.get(new Posicion(f_aux, c_aux).ToString()).color))
-                            resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux, c_aux)));
+                        if((pieza.Color != this.estado.get(new Posicion(f_aux, c_aux).ToString()).color))
+                            resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux, c_aux)));
                         ficha=true;
                     }
                     else
@@ -955,73 +956,73 @@ namespace Ajedrez.Ajedrez
        
         if (pieza.tipoPieza().Equals("Rey"))
         {
-            int f_aux = pieza.posicion.getFila();
-            int c_aux = pieza.posicion.getColumna();
+            int f_aux = pieza.Posicion.getFila();
+            int c_aux = pieza.Posicion.getColumna();
             if((f_aux > 0) && (f_aux < 7) && (c_aux > 0) && (c_aux < 7)){
             //posicion media
                 if(!hayPieza(new Posicion(f_aux, c_aux+1)))
-                    resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux, c_aux+1)));
+                    resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux, c_aux+1)));
                 else if(hayPieza(new Posicion(f_aux, c_aux+1)))
                     {
-                        if((pieza.color != this.estado.get(new Posicion(f_aux, c_aux+1).ToString()).color))
-                            resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux, c_aux+1)));
+                        if((pieza.Color != this.estado.get(new Posicion(f_aux, c_aux+1).ToString()).color))
+                            resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux, c_aux+1)));
                        
                     }
                 if(!hayPieza(new Posicion(f_aux+1, c_aux)))
-                    resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux+1, c_aux)));
+                    resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux+1, c_aux)));
                 else if(hayPieza(new Posicion(f_aux+1, c_aux)))
                     {
-                        if((pieza.color != this.estado.get(new Posicion(f_aux+1, c_aux).ToString()).color))
-                            resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux+1, c_aux)));
+                        if((pieza.Color != this.estado.get(new Posicion(f_aux+1, c_aux).ToString()).color))
+                            resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux+1, c_aux)));
                        
                     }
                  if(!hayPieza(new Posicion(f_aux-1, c_aux)))
-                    resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux-1, c_aux)));
+                    resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux-1, c_aux)));
                 else if(hayPieza(new Posicion(f_aux-1, c_aux)))
                     {
-                        if((pieza.color != this.estado.get(new Posicion(f_aux-1, c_aux).ToString()).color))
-                            resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux-1, c_aux)));
+                        if((pieza.Color != this.estado.get(new Posicion(f_aux-1, c_aux).ToString()).color))
+                            resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux-1, c_aux)));
                        
                     }
                 if(!hayPieza(new Posicion(f_aux-1, c_aux-1)))
-                    resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux-1, c_aux-1)));
+                    resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux-1, c_aux-1)));
                 else if(hayPieza(new Posicion(f_aux-1, c_aux-1)))
                     {
-                        if((pieza.color != this.estado.get(new Posicion(f_aux-1, c_aux-1).ToString()).color))
-                            resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux-1, c_aux-1)));
+                        if((pieza.Color != this.estado.get(new Posicion(f_aux-1, c_aux-1).ToString()).color))
+                            resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux-1, c_aux-1)));
                        
                     }
                 if(!hayPieza(new Posicion(f_aux, c_aux-1)))
-                    resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux, c_aux-1)));
+                    resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux, c_aux-1)));
                 else if(hayPieza(new Posicion(f_aux, c_aux-1)))
                     {
-                        if((pieza.color != this.estado.get(new Posicion(f_aux, c_aux-1).ToString()).color))
-                            resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux, c_aux-1)));
+                        if((pieza.Color != this.estado.get(new Posicion(f_aux, c_aux-1).ToString()).color))
+                            resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux, c_aux-1)));
                        
                     }
                 if(!hayPieza(new Posicion(f_aux+1, c_aux-1)))
-                    resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux+1, c_aux-1)));
+                    resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux+1, c_aux-1)));
                 else if(hayPieza(new Posicion(f_aux+1, c_aux-1)))
                     {
-                        if((pieza.color != this.estado.get(new Posicion(f_aux+1, c_aux-1).ToString()).color))
-                            resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux+1, c_aux-1)));
+                        if((pieza.Color != this.estado.get(new Posicion(f_aux+1, c_aux-1).ToString()).color))
+                            resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux+1, c_aux-1)));
                        
                     }
                 if(!hayPieza(new Posicion(f_aux+1, c_aux+1)))
-                    resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux+1, c_aux+1)));
+                    resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux+1, c_aux+1)));
                 else if(hayPieza(new Posicion(f_aux+1, c_aux+1)))
                     {
-                        if((pieza.color != this.estado.get(new Posicion(f_aux+1, c_aux+1).ToString()).color))
-                            resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux+1, c_aux+1)));
+                        if((pieza.Color != this.estado.get(new Posicion(f_aux+1, c_aux+1).ToString()).color))
+                            resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux+1, c_aux+1)));
                        
                     }
                
                 if(!hayPieza(new Posicion(f_aux-1, c_aux+1)))
-                    resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux-1, c_aux+1)));
+                    resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux-1, c_aux+1)));
                 else if(hayPieza(new Posicion(f_aux-1, c_aux+1)))
                     {
-                        if((pieza.color != this.estado.get(new Posicion(f_aux-1, c_aux+1).ToString()).color))
-                            resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux-1, c_aux+1)));
+                        if((pieza.Color != this.estado.get(new Posicion(f_aux-1, c_aux+1).ToString()).color))
+                            resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux-1, c_aux+1)));
                        
                     }
                
@@ -1029,27 +1030,27 @@ namespace Ajedrez.Ajedrez
         else if((c_aux -1 < 0) && (f_aux-1 <0)){
          //esquina superior izquierda
             if(!hayPieza(new Posicion(f_aux, c_aux+1)))
-                    resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux, c_aux+1)));
+                    resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux, c_aux+1)));
                 else if(hayPieza(new Posicion(f_aux, c_aux+1)))
                     {
-                        if((pieza.color != this.estado.get(new Posicion(f_aux, c_aux+1).ToString()).color))
-                           resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux, c_aux+1)));
+                        if((pieza.Color != this.estado.get(new Posicion(f_aux, c_aux+1).ToString()).color))
+                           resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux, c_aux+1)));
                        
                     }
             if(!hayPieza(new Posicion(f_aux+1, c_aux+1)))
-                    resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux+1, c_aux+1)));
+                    resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux+1, c_aux+1)));
                 else if(hayPieza(new Posicion(f_aux+1, c_aux+1)))
                     {
-                        if((pieza.color != this.estado.get(new Posicion(f_aux+1, c_aux+1).ToString()).color))
-                           resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux, c_aux+1)));
+                        if((pieza.Color != this.estado.get(new Posicion(f_aux+1, c_aux+1).ToString()).color))
+                           resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux, c_aux+1)));
                        
                     }
             if(!hayPieza(new Posicion(f_aux+1, c_aux)))
-                    resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux+1, c_aux)));
+                    resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux+1, c_aux)));
                 else if(hayPieza(new Posicion(f_aux+1, c_aux)))
                     {
-                        if((pieza.color != this.estado.get(new Posicion(f_aux+1, c_aux).ToString()).color))
-                           resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux+1, c_aux)));
+                        if((pieza.Color != this.estado.get(new Posicion(f_aux+1, c_aux).ToString()).color))
+                           resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux+1, c_aux)));
                        
                     }
            
@@ -1057,27 +1058,27 @@ namespace Ajedrez.Ajedrez
         else if((c_aux - 1 < 0) && (f_aux + 1 > 7)){
          //esquina inferior izquierda
             if(!hayPieza(new Posicion(f_aux, c_aux+1)))
-                    resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux, c_aux+1)));
+                    resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux, c_aux+1)));
                 else if(hayPieza(new Posicion(f_aux, c_aux+1)))
                     {
-                        if((pieza.color != this.estado.get(new Posicion(f_aux, c_aux+1).ToString()).color))
-                           resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux, c_aux+1)));
+                        if((pieza.Color != this.estado.get(new Posicion(f_aux, c_aux+1).ToString()).color))
+                           resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux, c_aux+1)));
                        
                     }
             if(!hayPieza(new Posicion(f_aux-1, c_aux+1)))
-                    resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux-1, c_aux+1)));
+                    resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux-1, c_aux+1)));
                 else if(hayPieza(new Posicion(f_aux-1, c_aux+1)))
                     {
-                        if((pieza.color != this.estado.get(new Posicion(f_aux-1, c_aux+1).ToString()).color))
-                           resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux-1, c_aux+1)));
+                        if((pieza.Color != this.estado.get(new Posicion(f_aux-1, c_aux+1).ToString()).color))
+                           resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux-1, c_aux+1)));
                        
                     }
             if(!hayPieza(new Posicion(f_aux-1, c_aux)))
-                    resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux-1, c_aux)));
+                    resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux-1, c_aux)));
                 else if(hayPieza(new Posicion(f_aux-1, c_aux)))
                     {
-                        if((pieza.color != this.estado.get(new Posicion(f_aux-1, c_aux).ToString()).color))
-                           resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux-1, c_aux)));
+                        if((pieza.Color != this.estado.get(new Posicion(f_aux-1, c_aux).ToString()).color))
+                           resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux-1, c_aux)));
                        
                     }
            
@@ -1086,27 +1087,27 @@ namespace Ajedrez.Ajedrez
         {
             //esquina inferior derecha
             if(!hayPieza(new Posicion(f_aux, c_aux-1)))
-                    resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux, c_aux-1)));
+                    resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux, c_aux-1)));
                 else if(hayPieza(new Posicion(f_aux, c_aux-1)))
                     {
-                        if((pieza.color != this.estado.get(new Posicion(f_aux, c_aux-1).ToString()).color))
-                           resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux, c_aux-1)));
+                        if((pieza.Color != this.estado.get(new Posicion(f_aux, c_aux-1).ToString()).color))
+                           resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux, c_aux-1)));
                        
                     }
             if(!hayPieza(new Posicion(f_aux-1, c_aux-1)))
-                    resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux-1, c_aux-1)));
+                    resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux-1, c_aux-1)));
                 else if(hayPieza(new Posicion(f_aux-1, c_aux-1)))
                     {
-                        if((pieza.color != this.estado.get(new Posicion(f_aux-1, c_aux-1).ToString()).color))
-                           resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux-1, c_aux-1)));
+                        if((pieza.Color != this.estado.get(new Posicion(f_aux-1, c_aux-1).ToString()).color))
+                           resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux-1, c_aux-1)));
                        
                     }
             if(!hayPieza(new Posicion(f_aux-1, c_aux)))
-                    resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux -1, c_aux)));
+                    resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux -1, c_aux)));
                 else if(hayPieza(new Posicion(f_aux-1, c_aux)))
                     {
-                        if((pieza.color != this.estado.get(new Posicion(f_aux-1, c_aux).ToString()).color))
-                           resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux -1, c_aux)));
+                        if((pieza.Color != this.estado.get(new Posicion(f_aux-1, c_aux).ToString()).color))
+                           resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux -1, c_aux)));
                        
                     }
            
@@ -1114,27 +1115,27 @@ namespace Ajedrez.Ajedrez
         else if((c_aux +1 > 7) && (f_aux -1 < 0)){
             //esquina superior derecha
             if(!hayPieza(new Posicion(f_aux+1, c_aux)))
-                    resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux+1, c_aux)));
+                    resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux+1, c_aux)));
                 else if(hayPieza(new Posicion(f_aux+1, c_aux)))
                     {
-                        if((pieza.color != this.estado.get(new Posicion(f_aux+1, c_aux).ToString()).color))
-                           resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux+1, c_aux)));
+                        if((pieza.Color != this.estado.get(new Posicion(f_aux+1, c_aux).ToString()).color))
+                           resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux+1, c_aux)));
                        
                     }
             if(!hayPieza(new Posicion(f_aux, c_aux-1)))
-                    resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux, c_aux-1)));
+                    resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux, c_aux-1)));
                 else if(hayPieza(new Posicion(f_aux, c_aux-1)))
                     {
-                        if((pieza.color != this.estado.get(new Posicion(f_aux, c_aux-1).ToString()).color))
-                           resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux, c_aux-1)));
+                        if((pieza.Color != this.estado.get(new Posicion(f_aux, c_aux-1).ToString()).color))
+                           resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux, c_aux-1)));
                        
                     }
             if(!hayPieza(new Posicion(f_aux+1, c_aux-1)))
-                    resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux+1, c_aux-1)));
+                    resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux+1, c_aux-1)));
                 else if(hayPieza(new Posicion(f_aux+1, c_aux-1)))
                     {
-                        if((pieza.color != this.estado.get(new Posicion(f_aux+1, c_aux-1).ToString()).color))
-                           resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux+1, c_aux-1)));
+                        if((pieza.Color != this.estado.get(new Posicion(f_aux+1, c_aux-1).ToString()).color))
+                           resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux+1, c_aux-1)));
                        
                     }
            
@@ -1143,43 +1144,43 @@ namespace Ajedrez.Ajedrez
         else if(c_aux - 1 < 0 ){
             //Lateral izquierdo
             if(!hayPieza(new Posicion(f_aux+1, c_aux)))
-                    resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux+1, c_aux)));
+                    resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux+1, c_aux)));
                 else if(hayPieza(new Posicion(f_aux+1, c_aux)))
                     {
-                        if((pieza.color != this.estado.get(new Posicion(f_aux+1, c_aux).ToString()).color))
-                           resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux+1, c_aux)));
+                        if((pieza.Color != this.estado.get(new Posicion(f_aux+1, c_aux).ToString()).color))
+                           resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux+1, c_aux)));
                        
                     }
             if(!hayPieza(new Posicion(f_aux-1, c_aux)))
-                    resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux-1, c_aux)));
+                    resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux-1, c_aux)));
                 else if(hayPieza(new Posicion(f_aux-1, c_aux)))
                     {
-                        if((pieza.color != this.estado.get(new Posicion(f_aux-1, c_aux).ToString()).color))
-                           resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux-1, c_aux)));
+                        if((pieza.Color != this.estado.get(new Posicion(f_aux-1, c_aux).ToString()).color))
+                           resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux-1, c_aux)));
                        
                     }
             if(!hayPieza(new Posicion(f_aux+1, c_aux+1)))
-                    resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux+1, c_aux+1)));
+                    resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux+1, c_aux+1)));
                 else if(hayPieza(new Posicion(f_aux+1, c_aux+1)))
                     {
-                        if((pieza.color != this.estado.get(new Posicion(f_aux+1, c_aux+1).ToString()).color))
-                           resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux+1, c_aux+1)));
+                        if((pieza.Color != this.estado.get(new Posicion(f_aux+1, c_aux+1).ToString()).color))
+                           resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux+1, c_aux+1)));
                        
                     }
             if(!hayPieza(new Posicion(f_aux, c_aux+1)))
-                    resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux, c_aux+1)));
+                    resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux, c_aux+1)));
                 else if(hayPieza(new Posicion(f_aux, c_aux+1)))
                     {
-                        if((pieza.color != this.estado.get(new Posicion(f_aux, c_aux+1).ToString()).color))
-                           resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux, c_aux+1)));
+                        if((pieza.Color != this.estado.get(new Posicion(f_aux, c_aux+1).ToString()).color))
+                           resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux, c_aux+1)));
                        
                     }
             if(!hayPieza(new Posicion(f_aux-1, c_aux+1)))
-                    resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux-1, c_aux+1)));
+                    resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux-1, c_aux+1)));
                 else if(hayPieza(new Posicion(f_aux-1, c_aux+1)))
                     {
-                        if((pieza.color != this.estado.get(new Posicion(f_aux-1, c_aux+1).ToString()).color))
-                           resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux-1, c_aux+1)));
+                        if((pieza.Color != this.estado.get(new Posicion(f_aux-1, c_aux+1).ToString()).color))
+                           resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux-1, c_aux+1)));
                        
                     }
                       
@@ -1187,43 +1188,43 @@ namespace Ajedrez.Ajedrez
         else if(c_aux + 1 > 7){
             //Lateral derecho
             if(!hayPieza(new Posicion(f_aux+1, c_aux)))
-                    resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux+1, c_aux)));
+                    resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux+1, c_aux)));
                 else if(hayPieza(new Posicion(f_aux+1, c_aux)))
                     {
-                        if((pieza.color != this.estado.get(new Posicion(f_aux+1, c_aux).ToString()).color))
-                           resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux-1, c_aux+1)));
+                        if((pieza.Color != this.estado.get(new Posicion(f_aux+1, c_aux).ToString()).color))
+                           resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux-1, c_aux+1)));
                        
                     }
             if(!hayPieza(new Posicion(f_aux-1, c_aux)))
-                    resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux-1, c_aux)));
+                    resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux-1, c_aux)));
                 else if(hayPieza(new Posicion(f_aux-1, c_aux)))
                     {
-                        if((pieza.color != this.estado.get(new Posicion(f_aux-1, c_aux).ToString()).color))
-                           resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux-1, c_aux)));
+                        if((pieza.Color != this.estado.get(new Posicion(f_aux-1, c_aux).ToString()).color))
+                           resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux-1, c_aux)));
                        
                     }
             if(!hayPieza(new Posicion(f_aux+1, c_aux-1)))
-                    resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux+1, c_aux-1)));
+                    resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux+1, c_aux-1)));
                 else if(hayPieza(new Posicion(f_aux+1, c_aux-1)))
                     {
-                        if((pieza.color != this.estado.get(new Posicion(f_aux+1, c_aux-1).ToString()).color))
-                           resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux+1, c_aux-1)));
+                        if((pieza.Color != this.estado.get(new Posicion(f_aux+1, c_aux-1).ToString()).color))
+                           resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux+1, c_aux-1)));
                        
                     }
             if(!hayPieza(new Posicion(f_aux, c_aux-1)))
-                    resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux, c_aux-1)));
+                    resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux, c_aux-1)));
                 else if(hayPieza(new Posicion(f_aux, c_aux-1)))
                     {
-                        if((pieza.color != this.estado.get(new Posicion(f_aux, c_aux-1).ToString()).color))
-                           resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux, c_aux-1)));
+                        if((pieza.Color != this.estado.get(new Posicion(f_aux, c_aux-1).ToString()).color))
+                           resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux, c_aux-1)));
                        
                     }
             if(!hayPieza(new Posicion(f_aux-1, c_aux-1)))
-                    resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux-1, c_aux-1)));
+                    resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux-1, c_aux-1)));
                 else if(hayPieza(new Posicion(f_aux-1, c_aux-1)))
                     {
-                        if((pieza.color != this.estado.get(new Posicion(f_aux-1, c_aux-1).ToString()).color))
-                           resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux-1, c_aux-1)));
+                        if((pieza.Color != this.estado.get(new Posicion(f_aux-1, c_aux-1).ToString()).color))
+                           resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux-1, c_aux-1)));
                        
                     }
            
@@ -1231,43 +1232,43 @@ namespace Ajedrez.Ajedrez
         else if(f_aux + 1 > 7){
             //Inferior
             if(!hayPieza(new Posicion(f_aux-1, c_aux)))
-                    resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux-1, c_aux)));
+                    resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux-1, c_aux)));
                 else if(hayPieza(new Posicion(f_aux-1, c_aux)))
                     {
-                        if((pieza.color != this.estado.get(new Posicion(f_aux-1, c_aux).ToString()).color))
-                           resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux-1, c_aux)));
+                        if((pieza.Color != this.estado.get(new Posicion(f_aux-1, c_aux).ToString()).color))
+                           resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux-1, c_aux)));
                        
                     }
             if(!hayPieza(new Posicion(f_aux-1, c_aux+1)))
-                    resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux-1, c_aux+1)));
+                    resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux-1, c_aux+1)));
                 else if(hayPieza(new Posicion(f_aux-1, c_aux+1)))
                     {
-                        if((pieza.color != this.estado.get(new Posicion(f_aux-1, c_aux+1).ToString()).color))
-                           resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux-1, c_aux+1)));
+                        if((pieza.Color != this.estado.get(new Posicion(f_aux-1, c_aux+1).ToString()).color))
+                           resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux-1, c_aux+1)));
                        
                     }
             if(!hayPieza(new Posicion(f_aux, c_aux+1)))
-                    resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux, c_aux+1)));
+                    resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux, c_aux+1)));
                 else if(hayPieza(new Posicion(f_aux, c_aux+1)))
                     {
-                        if((pieza.color != this.estado.get(new Posicion(f_aux, c_aux+1).ToString()).color))
-                           resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux, c_aux+1)));
+                        if((pieza.Color != this.estado.get(new Posicion(f_aux, c_aux+1).ToString()).color))
+                           resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux, c_aux+1)));
                        
                     }
             if(!hayPieza(new Posicion(f_aux-1, c_aux-1)))
-                    resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux-1, c_aux-1)));
+                    resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux-1, c_aux-1)));
                 else if(hayPieza(new Posicion(f_aux-1, c_aux-1)))
                     {
-                        if((pieza.color != this.estado.get(new Posicion(f_aux-1, c_aux-1).ToString()).color))
-                           resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux-1, c_aux-1)));
+                        if((pieza.Color != this.estado.get(new Posicion(f_aux-1, c_aux-1).ToString()).color))
+                           resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux-1, c_aux-1)));
                        
                     }
             if(!hayPieza(new Posicion(f_aux, c_aux-1)))
-                    resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux, c_aux-1)));
+                    resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux, c_aux-1)));
                 else if(hayPieza(new Posicion(f_aux, c_aux-1)))
                     {
-                        if((pieza.color != this.estado.get(new Posicion(f_aux, c_aux-1).ToString()).color))
-                           resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux, c_aux-1)));
+                        if((pieza.Color != this.estado.get(new Posicion(f_aux, c_aux-1).ToString()).color))
+                           resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux, c_aux-1)));
                        
                     }
            
@@ -1275,43 +1276,43 @@ namespace Ajedrez.Ajedrez
         else if(f_aux - 1 < 0){
             //Superior
             if(!hayPieza(new Posicion(f_aux+1, c_aux)))
-                    resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux+1, c_aux)));
+                    resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux+1, c_aux)));
                 else if(hayPieza(new Posicion(f_aux+1, c_aux)))
                     {
-                        if((pieza.color != this.estado.get(new Posicion(f_aux+1, c_aux).ToString()).color))
-                           resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux+1, c_aux)));
+                        if((pieza.Color != this.estado.get(new Posicion(f_aux+1, c_aux).ToString()).color))
+                           resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux+1, c_aux)));
                        
                     }
             if(!hayPieza(new Posicion(f_aux, c_aux-1)))
-                    resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux, c_aux-1)));
+                    resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux, c_aux-1)));
                 else if(hayPieza(new Posicion(f_aux, c_aux-1)))
                     {
-                        if((pieza.color != this.estado.get(new Posicion(f_aux, c_aux-1).ToString()).color))
-                           resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux, c_aux-1)));
+                        if((pieza.Color != this.estado.get(new Posicion(f_aux, c_aux-1).ToString()).color))
+                           resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux, c_aux-1)));
                        
                     }
             if(!hayPieza(new Posicion(f_aux, c_aux+1)))
-                    resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux, c_aux+1)));
+                    resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux, c_aux+1)));
                 else if(hayPieza(new Posicion(f_aux, c_aux+1)))
                     {
-                        if((pieza.color != this.estado.get(new Posicion(f_aux, c_aux+1).ToString()).color))
-                           resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux, c_aux+1)));
+                        if((pieza.Color != this.estado.get(new Posicion(f_aux, c_aux+1).ToString()).color))
+                           resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux, c_aux+1)));
                        
                     }
             if(!hayPieza(new Posicion(f_aux+1, c_aux-1)))
-                    resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux+1, c_aux-1)));
+                    resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux+1, c_aux-1)));
                 else if(hayPieza(new Posicion(f_aux+1, c_aux-1)))
                     {
-                        if((pieza.color != this.estado.get(new Posicion(f_aux+1, c_aux-1).ToString()).color))
-                           resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux+1, c_aux-1)));
+                        if((pieza.Color != this.estado.get(new Posicion(f_aux+1, c_aux-1).ToString()).color))
+                           resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux+1, c_aux-1)));
                        
                     }
             if(!hayPieza(new Posicion(f_aux+1, c_aux+1)))
-                    resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux+1, c_aux+1)));
+                    resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux+1, c_aux+1)));
                 else if(hayPieza(new Posicion(f_aux+1, c_aux+1)))
                     {
-                        if((pieza.color != this.estado.get(new Posicion(f_aux+1, c_aux+1).ToString()).color))
-                           resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux+1, c_aux+1)));
+                        if((pieza.Color != this.estado.get(new Posicion(f_aux+1, c_aux+1).ToString()).color))
+                           resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux+1, c_aux+1)));
                        
                     }       
         }        
@@ -1325,19 +1326,19 @@ namespace Ajedrez.Ajedrez
             if (pieza.tipoPieza().Equals("Alfil"))
         {
             Boolean ficha = false;
-                int f_aux = pieza.posicion.getFila();
-                int c_aux = pieza.posicion.getColumna();      
+                int f_aux = pieza.Posicion.getFila();
+                int c_aux = pieza.Posicion.getColumna();      
                 while ((f_aux >= 0) && (c_aux <= 7) && !ficha) {
                     
                     f_aux--;
                     c_aux++;
                     if (( !(f_aux < 0) )  && ( !(c_aux > 7) )) 
                         if(!hayPieza(new Posicion(f_aux, c_aux)))
-                            resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux, c_aux)));
+                            resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux, c_aux)));
                         else if(hayPieza(new Posicion(f_aux, c_aux)))
                         {
-                            if((pieza.color != this.estado.get(new Posicion(f_aux, c_aux).ToString()).color))
-                                resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux, c_aux)));
+                            if((pieza.Color != this.estado.get(new Posicion(f_aux, c_aux).ToString()).color))
+                                resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux, c_aux)));
                             ficha=true;
                         }
                         else
@@ -1348,19 +1349,19 @@ namespace Ajedrez.Ajedrez
             //Esquina inferior derecha
             //Partimos del punto inicial para volver a mirar
             ficha = false;
-            f_aux = pieza.posicion.getFila();
-            c_aux = pieza.posicion.getColumna();
+            f_aux = pieza.Posicion.getFila();
+            c_aux = pieza.Posicion.getColumna();
             while ((f_aux <= 7) && (c_aux <= 7) && !ficha) {
                 f_aux++;
                 c_aux++;
                 if (( !(f_aux > 7) )  && ( !(c_aux > 7) )) 
                 {
                     if(!hayPieza(new Posicion(f_aux, c_aux)))
-                        resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux, c_aux)));
+                        resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux, c_aux)));
                     else if(hayPieza(new Posicion(f_aux, c_aux)))
                     {
-                        if((pieza.color != this.estado.get(new Posicion(f_aux, c_aux).ToString()).color))
-                            resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux, c_aux)));
+                        if((pieza.Color != this.estado.get(new Posicion(f_aux, c_aux).ToString()).color))
+                            resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux, c_aux)));
                         ficha=true;
                     }
                     else
@@ -1370,8 +1371,8 @@ namespace Ajedrez.Ajedrez
                 }
             }
             ficha = false;
-            f_aux = pieza.posicion.getFila();
-            c_aux = pieza.posicion.getColumna();
+            f_aux = pieza.Posicion.getFila();
+            c_aux = pieza.Posicion.getColumna();
             while((f_aux <= 7) && (c_aux >= 0) && !ficha){
                 //Esquina superior izquierda
                 f_aux++;
@@ -1379,11 +1380,11 @@ namespace Ajedrez.Ajedrez
                 if (( !(c_aux < 0) )  && ( !(f_aux > 7) )) 
                 {
                     if(!hayPieza(new Posicion(f_aux, c_aux)))
-                        resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux, c_aux)));
+                        resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux, c_aux)));
                     else if(hayPieza(new Posicion(f_aux, c_aux)))
                     {
-                        if((pieza.color != this.estado.get(new Posicion(f_aux, c_aux).ToString()).color))
-                            resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux, c_aux)));
+                        if((pieza.Color != this.estado.get(new Posicion(f_aux, c_aux).ToString()).color))
+                            resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux, c_aux)));
                         ficha=true;
                     }
                     else
@@ -1393,8 +1394,8 @@ namespace Ajedrez.Ajedrez
                 }
             }
             ficha = false;
-            f_aux = pieza.posicion.getFila();
-            c_aux = pieza.posicion.getColumna();
+            f_aux = pieza.Posicion.getFila();
+            c_aux = pieza.Posicion.getColumna();
             while((f_aux >= 0) && (c_aux >= 0) && !ficha){
                 //Esquina inferior izquierda
                 f_aux--;
@@ -1402,11 +1403,11 @@ namespace Ajedrez.Ajedrez
                 if (( !(f_aux < 0) )  && ( !(c_aux < 0) ))
                 {
                     if(!hayPieza(new Posicion(f_aux, c_aux)))
-                        resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux, c_aux)));
+                        resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux, c_aux)));
                     else if(hayPieza(new Posicion(f_aux, c_aux)))
                     {
-                        if((pieza.color != this.estado.get(new Posicion(f_aux, c_aux).ToString()).color))
-                            resultado.add(new Movimiento(pieza.color, pieza.posicion, new Posicion(f_aux, c_aux)));
+                        if((pieza.Color != this.estado.get(new Posicion(f_aux, c_aux).ToString()).color))
+                            resultado.add(new Movimiento(pieza.Color, pieza.Posicion, new Posicion(f_aux, c_aux)));
                         ficha=true;
                     }
                     else

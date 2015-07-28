@@ -9,8 +9,20 @@ namespace Ajedrez.Ajedrez
      
      public abstract class Pieza
     {
-        public Posicion posicion;
-        public Color color;
+        private Posicion posicion;
+
+        public Posicion Posicion
+        {
+            get { return posicion; }
+            set { posicion = value; }
+        }
+        private Color color;
+
+        public Color Color
+        {
+            get { return color; }
+            set { color = value; }
+        }
 
         public Pieza(Posicion pos, Color col)
         {

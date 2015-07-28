@@ -8,7 +8,7 @@ namespace Ajedrez.Ajedrez
 {
     public class Movimientos
     {
-        public final HashMap<Pieza, Movimiento> movimientos= new HashMap<>();
+        public  HashMap<Pieza, Movimiento> movimientos= new HashMap<>();
         public ArraySegment<String> listado_movimientos = new ArraySegment<String>();
     
 
@@ -25,6 +25,7 @@ namespace Ajedrez.Ajedrez
     public void anadirMovimiento(Pieza pieza, Movimiento movimiento)
     {
         listado_movimientos.Add(pieza.tipoPieza()+" "+movimiento);
+       
     }
   }
 

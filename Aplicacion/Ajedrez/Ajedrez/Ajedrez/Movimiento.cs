@@ -9,16 +9,27 @@ namespace Ajedrez.Ajedrez
     public class Movimiento
     {
         public Ajedrez.Color color;
-        public Posicion posActual;
-        public Posicion posDestino;
+        private Posicion posActual;
+        private Posicion posDestino;
 
+        public Posicion PosDestino
+        {
+            get { return posDestino; }
+            set { posDestino = value; }
+        }
 
+        public Posicion PosActual
+        {
+            get { return posActual; }
+            set { posActual = value; }
+        }
+        
         public Movimiento()
         {
            
         }
 
-        public void Movimiento(Color color, Posicion posicion, Posicion posicion0)
+        public  Movimiento(Color color, Posicion posicion, Posicion posicion0)
         {
             this.color = color;
             this.posActual = posicion;

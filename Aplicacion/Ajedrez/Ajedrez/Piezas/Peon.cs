@@ -63,8 +63,8 @@ namespace Ajedrez.Piezas
     }
     
     public void actualizarPosicion(Posicion nuevaPosicion) {
-        posicion.setColumna(nuevaPosicion.columna);
-        posicion.setFila(nuevaPosicion.fila);
+        Posicion.setColumna(nuevaPosicion.columna);
+        Posicion.setFila(nuevaPosicion.fila);
     }
     
     public String toString(){

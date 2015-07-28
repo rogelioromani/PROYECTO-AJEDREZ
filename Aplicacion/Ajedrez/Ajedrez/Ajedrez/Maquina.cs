@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
 namespace Ajedrez.Ajedrez
 {
    public class Maquina
@@ -32,8 +31,8 @@ namespace Ajedrez.Ajedrez
 
             while (!encontrado)
                 {
-               // pos.setFila(rd.nextInt(7));
-                //pos.setColumna(rd.nextInt(7));
+               // pos.setFila(rd.Next(7));
+                //pos.setColumna(rd.Next(7));
                 
 //                if((tab.estado.get(pos.toString()) != null) && (tab.estado.get(pos.toString()).color == ajedrez.Color.negra)){
                     /*tenemos una posición del tablero con una pieza
@@ -43,7 +42,7 @@ namespace Ajedrez.Ajedrez
                     //resultado será un arraylist con los posibles movimientos
                     //de la ficha seleccionada
                     List<Pieza> valuesList = new ArraySegment<Pieza>(tab.piezas_negras.values());
-                    int randomIndex = new Random().nextInt(valuesList.size());
+                    int randomIndex = new Random().Next(valuesList.size());
                     Pieza randomValue = valuesList.Get(randomIndex);
                     resultado = tab.getMovimientosPosibles(randomValue);
                     if (randomValue.tipoPieza().Equals("Torre"))
@@ -57,7 +56,9 @@ namespace Ajedrez.Ajedrez
                         System.Windows.MessageBox.Show("size= " + resultado.Size());
                         int aleatorio;
                         if (resultado.size()>0)
-                            aleatorio = rd.Nextint(resultado.size())+1;
+                            
+
+                            aleatorio = rd.Next(resultado.size())+1;
                         else
                             aleatorio = 0;
                         System.Windows.MessageBox.Show("aleatorio= " + aleatorio);
@@ -66,8 +67,8 @@ namespace Ajedrez.Ajedrez
                             m = iterador.next();
                         }
                         System.Windows.MessageBox.Show("m= " + m);
-                            if (tab.esMovimientoPosible(m, tab.piezas_negras.get(randomValue.posicion.toString()))){
-                                movimiento =new Movimiento(m.color,m.posActual,m.posDestino);
+                            if (tab.esMovimientoPosible(m, tab.piezas_negras.get(randomValue.Posicion.toString()))){
+                                movimiento = new Movimiento(m.color, m.PosActual, m.PosDestino);
                                 encontrado =true;
 //                                break;
                             }

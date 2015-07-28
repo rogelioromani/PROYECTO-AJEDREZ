@@ -20,11 +20,11 @@ namespace Ajedrez
     Color col;
 
 
-     public Alfil(Posicion pos, Color c) {
-        super(pos, c);
+     public Alfil (Posicion pos, Color c) {
+        base.posicion(pos c);
         this.fila_actual = pos.getFila();
         this.columna_actual = pos.getColumna();
-        this.color = c;
+        this.Color = c;
     }
 
     public void MostrarTodas()
@@ -35,13 +35,9 @@ namespace Ajedrez
              System.Windows.MessageBox.Show(palabra + " ");
         }
          System.Windows.MessageBox.Show("");
-<<<<<<< HEAD
-        resultado.Clear ();
-       
-=======
-        resultado.Clear();
-   
->>>>>>> faf/master
+
+        resultado.Clear (); 
+
     }
 
     public Posicion[] getResult() {
@@ -51,19 +47,20 @@ namespace Ajedrez
    public Movimientos getMovimientosPosibles() {
         //Al ser un alfil tenemos 4 posibles caminos que comprobar (las 4 esquinas)
         //Esquina superior derecha
-        int f_aux = posicion.getFila();
-        int c_aux = posicion.getColumna(); //Obtenemos la posición dentro del array
+        int f_aux = Posicion.getFila();
+        int c_aux = Posicion.getColumna(); //Obtenemos la posición dentro del array
         
         while ((f_aux > 0) && (c_aux < columnas.Length-1)) {
             f_aux--;
             c_aux++;
-            resultado.add(new Posicion(f_aux, c_aux));
+            
+            resultado.Add(new Posicion(f_aux, c_aux));
             
         }
         //Esquina inferior derecha
         //Partimos del punto inicial para volver a mirar
-        f_aux = posicion.getFila();
-        c_aux = posicion.getColumna();
+        f_aux = Posicion.getFila();
+        c_aux = Posicion.getColumna();
         System.Windows.MessageBox.Show("mala: " + "f_aux= "+ f_aux + "c_aux= " + c_aux);
         while ((f_aux < filas.Length-1) && (c_aux < columnas.Length-1)) {
             f_aux++;
@@ -71,8 +68,8 @@ namespace Ajedrez
             
             resultado.add(new Posicion(f_aux, c_aux));
         }
-        f_aux = posicion.getFila();
-        c_aux = posicion.getColumna();
+        f_aux = Posicion.getFila();
+        c_aux = Posicion.getColumna();
         System.Windows.MessageBox.Show("puta: " + "f_aux= "+ f_aux + "c_aux= " + c_aux);
         while ((f_aux > 0) && (c_aux > 0)) {
             //Esquina superior izquierda
@@ -80,8 +77,8 @@ namespace Ajedrez
             c_aux--;
             resultado.add(new Posicion(f_aux, c_aux));
         }
-        f_aux = posicion.getFila();
-        c_aux = posicion.getColumna();
+        f_aux = Posicion.getFila();
+        c_aux = Posicion.getColumna();
         System.Windows.MessageBox.Show("joder: " + "f_aux= "+ f_aux + "c_aux= " + c_aux);
         while ((f_aux < filas.Length-1) && (c_aux > 0)) {
             //Esquina inferior izquierda
@@ -126,7 +123,7 @@ namespace Ajedrez
     }
     
      public String toString() {
-        return "Alfil " + color.name();
+        return "Alfil " + Color.name();
     }
 
   }

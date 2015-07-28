@@ -26,7 +26,7 @@ namespace Ajedrez.Piezas
         super(pos,c);
         this.fila_actual = pos.getFila();
         this.columna_actual = pos.getColumna();
-        this.color = c; 
+        this.Color = c; 
     }
     public void MostrarTodas()
     {
@@ -42,8 +42,8 @@ namespace Ajedrez.Piezas
     public Movimientos getMovimientosPosibles() {
          //Al ser una torre tenemos 4 posibles caminos que comprobar 
 
-        int f_aux = posicion.getFila();
-        int c_aux = posicion.getColumna();
+        int f_aux = Posicion.getFila();
+        int c_aux = Posicion.getColumna();
         
         System.Windows.MessageBox.Show("mala: " + "f_aux= "+ f_aux + "c_aux= " + c_aux);
         
@@ -54,23 +54,23 @@ namespace Ajedrez.Piezas
             
         }
         
-        f_aux = posicion.getFila();
-        c_aux = posicion.getColumna();
+        f_aux = Posicion.getFila();
+        c_aux = Posicion.getColumna();
         while(f_aux < filas.Length-2){
             //Hacia delante
             f_aux++;
             resultado.add(new Posicion(f_aux, c_aux));
         }
-        f_aux = posicion.getFila();
-        c_aux = posicion.getColumna();
+        f_aux = Posicion.getFila();
+        c_aux = Posicion.getColumna();
         while(c_aux > 0){
             // Hacia izquiera
             c_aux--;
             resultado.add(new Posicion(f_aux, c_aux));
         }
 
-        f_aux = posicion.getFila();
-        c_aux = posicion.getColumna();
+        f_aux = Posicion.getFila();
+        c_aux = Posicion.getColumna();
         while(c_aux < columnas.Length-2){
             // Hacia derecha
             c_aux++;
@@ -110,7 +110,7 @@ namespace Ajedrez.Piezas
     }
       
     public String toString(){
-        return "Torre "+color.name();
+        return "Torre "+Color.name();
     }
     }
 }

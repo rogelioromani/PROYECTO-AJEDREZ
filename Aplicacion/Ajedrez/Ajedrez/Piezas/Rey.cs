@@ -23,7 +23,7 @@ namespace Ajedrez.Piezas
         super(pos, c);
         this.fila_actual = pos.getFila();
         this.columna_actual = pos.getColumna();
-        this.color = c;
+        this.Color = c;
     }
     public void MostrarTodas()
     {
@@ -39,8 +39,8 @@ namespace Ajedrez.Piezas
     public Movimientos getMovimientosPosibles() {
         //Al ser un rey tenemos 4 posibles caminos que comprobar (las 4 esquinas)
         //Esquina superior derecha
-        int f_aux = posicion.getFila();
-        int c_aux = posicion.getColumna(); //Obtenemos la posición dentro del array
+        int f_aux = Posicion.getFila();
+        int c_aux = Posicion.getColumna(); //Obtenemos la posición dentro del array
         
         if((f_aux > 0) && (f_aux < filas.Length-1) && (c_aux > 0) && (c_aux < columnas.Length-1)){
         //posicion media
@@ -146,7 +146,7 @@ namespace Ajedrez.Piezas
     }
    
     public String toString(){
-        return "Rey "+color.name();
+        return "Rey "+Color.name();
     }
   }
 }
