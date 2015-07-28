@@ -15,7 +15,7 @@
     shell:SystemTray.IsVisible="True">
 
     <!--LayoutRoot es la cuadrícula raíz donde se coloca todo el contenido de la página-->
-    <Grid x:Name="LayoutRoot" Background="Transparent" RenderTransformOrigin="0.487,0.492">
+    <Grid x:Name="LayoutRoot" Background="LawnGreen"  RenderTransformOrigin="0.487,0.492">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" MinHeight="752"/>
             <RowDefinition/>
@@ -24,14 +24,14 @@
         <!--<Image Source="/Assets/AlignmentGrid.png" VerticalAlignment="Top" Height="800" Width="480" Margin="0,-32,0,0" Grid.Row="0" Grid.RowSpan="2" IsHitTestVisible="False" />-->
         <!--TitlePanel contiene el nombre de la aplicación y el título de la página-->
         <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="10,0,0,440">
-            <TextBlock x:Name="txtB" Text="AJEDREZ- UNAJMA"/> 
+            <TextBlock FontSize="46" Foreground="Black" x:Name="txtB" Text="AJEDREZ- UNAJMA"/> 
         </StackPanel>
 
         <!--ContentPanel. Colocar aquí el contenido adicional-->
         <Grid x:Name="ContentPanel" Margin="20,317,20,0">
-            <Button x:Name="ayuda" Content="Ayuda" Height="100" Margin="0,25,0,310" Background="Aqua" Click="ayuda_Click"/>
-            <Button x:Name="partida" Content="Crear Partida" Height="100" Margin="0,125,0,210"  Background="Aqua" Click="partida_Click"/>
-            <Button x:Name="salir" Content="Salir" Height="100" Margin="0,225,0,110"  Background="Aqua" Click="salir_Click"/>
+            <Button FontSize="46" Foreground="Red" x:Name="ayuda" Content="Ayuda" Height="100" Margin="0,25,0,310" Background="Aqua" Click="ayuda_Click"/>
+            <Button FontSize="46" Foreground="Red" x:Name="partida" Content="Crear Partida" Height="100" Margin="0,125,0,210"  Background="Aqua" Click="partida_Click"/>
+            <Button FontSize="46" Foreground="Red" x:Name="salir" Content="Salir" Height="100" Margin="0,225,0,110"  Background="Aqua" Click="salir_Click"/>
         
         </Grid>
     </Grid>

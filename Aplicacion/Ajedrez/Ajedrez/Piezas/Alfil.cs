@@ -10,18 +10,20 @@ namespace Ajedrez
     public class Alfil:Pieza
     {
     Movimientos mov = new Movimientos();
-    //Posicion pos;
+    Posicion pos;
     int fila_actual;
     int columna_actual;
     char[] filas = {'0', '1', '2', '3', '4', '5', '6', '7'};
     char[] columnas = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'};
     Posicion[] result = new Posicion[64];
-    ArraySegment<Posicion> resultado = new ArraySegment<>();
+    public ArrayList resultado;
     Color col;
 
 
-     public Alfil (Posicion pos, Color c) {
-        base.posicion(pos c);
+     public Alfil (Posicion pos, Color c)
+         :base(pos, c)
+     {
+         
         this.fila_actual = pos.getFila();
         this.columna_actual = pos.getColumna();
         this.Color = c;
@@ -117,13 +119,12 @@ namespace Ajedrez
         return esposible;
 
     }
-
       public String tipoPieza(){
         return "Alfil";
     }
     
      public String toString() {
-        return "Alfil " + Color.name();
+         return "Alfil " + color.name();
     }
 
   }

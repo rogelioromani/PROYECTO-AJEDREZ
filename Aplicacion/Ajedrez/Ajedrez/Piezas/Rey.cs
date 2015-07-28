@@ -16,11 +16,12 @@ namespace Ajedrez.Piezas
     char[] filas = {'0', '1', '2', '3', '4', '5', '6', '7'};
     char[] columnas = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'};
     Posicion[] result = new Posicion[64];
-    ArraySegment<Posicion> resultado = new ArraySegment<>();
+    public ArrayList resultado;
     Color col;
     
-    public Rey(Posicion pos, Color c){
-        super(pos, c);
+    public Rey(Posicion pos, Color c)
+     :base(pos, c)
+    {
         this.fila_actual = pos.getFila();
         this.columna_actual = pos.getColumna();
         this.Color = c;

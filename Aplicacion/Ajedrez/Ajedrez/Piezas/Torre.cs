@@ -1,13 +1,14 @@
-﻿using System;
+﻿using Ajedrez.Ajedrez;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Ajedrez.Ajedrez;
 
 namespace Ajedrez.Piezas
 {
-   public class Torre:Pieza
+   public class Torre:Pieza 
     {
        Movimientos mov = new Movimientos();
     //Posicion pos;
@@ -16,14 +17,14 @@ namespace Ajedrez.Piezas
     char[] filas = {'0','1','2','3','4','5','6','7','8'};
     char[] columnas = {'a','b','c','d','e','f','g','h'};
     Posicion[] result = new Posicion[64];
-    ArraySegment<Posicion> resultado = new ArraySegment<>();
+    public ArrayList resultado;
     Color col;
     /**
      *
      */
     public Torre(Posicion pos, Color c)
+      :base(pos,c)
     {
-        super(pos,c);
         this.fila_actual = pos.getFila();
         this.columna_actual = pos.getColumna();
         this.Color = c; 
@@ -38,7 +39,7 @@ namespace Ajedrez.Piezas
         System.Windows.MessageBox.Show("");
         resultado.clear();
     }
-    
+   
     public Movimientos getMovimientosPosibles() {
          //Al ser una torre tenemos 4 posibles caminos que comprobar 
 

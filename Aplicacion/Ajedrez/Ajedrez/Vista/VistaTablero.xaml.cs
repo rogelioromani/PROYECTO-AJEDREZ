@@ -32,7 +32,7 @@ namespace Ajedrez.Vista
         //o contra otro usuario
 
         public static Boolean contraPersona = false;
-        public static Rect casilla[][] = new Rect[8][8];
+        public static Rect [][]casilla = new Rect[8][];
         public Movimientos movimientos = new Movimientos();
         private DefaultListModel listModel;
         private Boolean turno = true;
@@ -43,21 +43,20 @@ namespace Ajedrez.Vista
             tablero = tab;
             InitializeComponent();
             setSize(600,500);
-            
             tableroPanel.setLayout(new GridLayou(8, 8));
             seleccionAnterior = " ";
             posicionAnterior = new Posicion(0,0);
             posicionActual = new Posicion(0,0);
 
-            final Maquina maq = new Maquina(tablero);
+             Maquina maq = new Maquina(tablero);
 
             // Dibujamos el tablero: cada casilla sera un Button.
 
             for (int i = 0; i < 8; i++) {
-            final int fila = i;
+            int fila = i;
             for (int j = 0; j < 8; j++) {
-                final int columna = j;
-                casilla[i][j] = new Button();
+                 int columna = j;
+                casilla[i][j] = new Rect();
                 casilla[i][j].setSize(new Dimension(50,50));
                 casilla[fila][columna].setActionCommand("action"+i+j);
                 //Comprobación de jugar con ordenador o persona

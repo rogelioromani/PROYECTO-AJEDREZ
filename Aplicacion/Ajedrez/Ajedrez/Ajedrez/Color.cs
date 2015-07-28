@@ -8,6 +8,6 @@ namespace Ajedrez.Ajedrez
 {
    public enum Color
     {
-       blanca, negra
+        blanca, negra
     }
 }
