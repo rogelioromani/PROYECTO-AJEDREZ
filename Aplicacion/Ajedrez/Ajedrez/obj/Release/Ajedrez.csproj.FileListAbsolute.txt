@@ -1,0 +1,7 @@
+C:\Users\rogelio\Desktop\PROYECTO-AJEDREZ\Aplicacion\Ajedrez\Ajedrez\obj\Release\Ajedrez.csprojResolveAssemblyReference.cache
+C:\Users\rogelio\Desktop\PROYECTO-AJEDREZ\Aplicacion\Ajedrez\Ajedrez\obj\Release\App.g.cs
+C:\Users\rogelio\Desktop\PROYECTO-AJEDREZ\Aplicacion\Ajedrez\Ajedrez\obj\Release\MainPage.g.cs
+C:\Users\rogelio\Desktop\PROYECTO-AJEDREZ\Aplicacion\Ajedrez\Ajedrez\obj\Release\Vista\VistaTablero.g.cs
+C:\Users\rogelio\Desktop\PROYECTO-AJEDREZ\Aplicacion\Ajedrez\Ajedrez\obj\Release\Ajedrez.g.resources
+C:\Users\rogelio\Desktop\PROYECTO-AJEDREZ\Aplicacion\Ajedrez\Ajedrez\obj\Release\Ajedrez.Resources.AppResources.resources
+C:\Users\rogelio\Desktop\PROYECTO-AJEDREZ\Aplicacion\Ajedrez\Ajedrez\obj\Release\Ajedrez.csproj.GenerateResource.Cache

@@ -4,12 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace Ajedrez.Ajedrez
 {
     public class Movimientos
     {
         public  HashMap<Pieza, Movimiento> movimientos= new HashMap<>();
-        public ArraySegment<String> listado_movimientos = new ArraySegment<String>();
+        public ArrayList listado_movimientos = new  ArrayList();
     
 
     public Movimientos()

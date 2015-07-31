@@ -156,13 +156,13 @@
     <Content Include="Vista\Imagen\black_peon.png" />
     <Content Include="Vista\Imagen\black_reina.png" />
     <Content Include="Vista\Imagen\black_rey.png" />
-    <Content Include="Vista\Imagen\black_rook.png" />
-    <Content Include="Vista\Imagen\white_bishop.png" />
+    <Content Include="Vista\Imagen\black_torre.png" />
+    <Content Include="Vista\Imagen\white_alfil.png" />
     <Content Include="Vista\Imagen\white_caballo.png" />
     <Content Include="Vista\Imagen\white_peon.png" />
     <Content Include="Vista\Imagen\white_reina.png" />
     <Content Include="Vista\Imagen\white_rey.png" />
-    <Content Include="Vista\Imagen\white_rook.png" />
+    <Content Include="Vista\Imagen\white_torre.png" />
     <Content Include="Assets\Tiles\FlipCycleTileLarge.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -178,7 +178,7 @@
     <Content Include="Assets\Tiles\IconicTileSmall.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Vista\Imagen\black_bishop.png" />
+    <Content Include="Vista\Imagen\black_alfil.png" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\AppResources.resx">

@@ -18,6 +18,7 @@ namespace Ajedrez.Ajedrez
     private  Caballo[] caballo = new Caballo[4];
     private  Rey[] rey = new Rey[2];
     private  Reyna[] reyna = new Reyna[2];
+
     
     public  HashMap<String, Pieza> estado = new HashMap<>();
     public  HashMap<String, Pieza> piezas_negras = new HashMap<>();
